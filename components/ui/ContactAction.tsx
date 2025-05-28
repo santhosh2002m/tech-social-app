@@ -1,20 +1,4 @@
-// ContactAction.tsx
-interface ContactActionProps {
-  sectionType: "followers" | "followings";
-}
-
-const ContactAction = ({ sectionType }: ContactActionProps) => {
-  const actionLists = {
-    followers: [
-      ["Remove Follower", "person_remove"],
-      ["Hide Contact", "hide_source"],
-    ],
-    followings: [
-      ["Unfollow", "person_remove"],
-      ["Hide Contact", "hide_source"],
-    ],
-  };
-
+const ContactAction = ({ actionList }: { actionList: string[][] }) => {
   return (
     <div className="btn-group cus-dropdown dropend">
       <button
@@ -26,7 +10,7 @@ const ContactAction = ({ sectionType }: ContactActionProps) => {
         <i className="material-symbols-outlined fs-xxl m-0">more_horiz</i>
       </button>
       <ul className="dropdown-menu p-4 pt-2">
-        {actionLists[sectionType]?.map(([itm, icon], i) => (
+        {actionList?.map(([itm, icon], i) => (
           <li key={i}>
             <button className="droplist d-flex align-items-center gap-2">
               <i className="material-symbols-outlined mat-icon">{icon}</i>
