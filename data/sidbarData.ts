@@ -23,15 +23,15 @@ export const friendLeftMenu = [
 ];
 
 export const homeLeftMenu = [
-  ["home", "Home", "/"], // Unchanged, 'home' is clear and standard
-  ["chat_bubble", "Chats", "/chats"], // 'chat_bubble' is more specific to messaging than 'chat'
-  ["auto_awesome", "Explore AI", "/explore-ai"], // 'auto_awesome' conveys AI's innovative nature
-  ["feed", "Posts", "/posts"], // 'feed' better represents a social media post stream
-  ["favorite", "Like Posts", "/liked-posts"], // 'favorite' is more emotive and specific for likes
-  ["ios_share", "Share Posts", "/shared-posts"], // 'ios_share' is a modern share icon
-  ["chat_bubble_outline", "Comments Posts", "/commented-posts"], // 'chat_bubble_outline' fits comments well
-  ["tag", "Mentions Posts", "/mentioned-posts"], // 'tag' is concise and relevant for mentions
-  ["bookmark", "Saved Posts", "/saved-posts"], // 'bookmark' is more precise for saved content
-  ["help_outline", "FAQ", "/faq"], // 'help_outline' is cleaner and more modern for FAQ
-  ["support_agent", "Support", "/support"], // 'support_agent' implies direct help or contact
+  ["home", "Home", "/"], // Home screen
+  ["chat", "Chats", "/chats"], // Direct messaging
+  ["cognition", "Explore AI", "/explore-ai"], // Clearly symbolizes AI/brainpower
+  ["newspaper", "Posts", "/posts"], // Content or news feed
+  ["thumb_up_alt", "Liked Posts", "/liked-posts"], // Minimal and modern like button
+  ["reply", "Shared Posts", "/shared-posts"], // Clear indication of sharing action
+  ["mode_comment", "Commented Posts", "/commented-posts"], // Clean and simple for comments
+  ["alternate_email", "Mentioned Posts", "/mentioned-posts"], // '@' for mentions
+  ["turned_in", "Saved Posts", "/saved-posts"], // Saved/bookmarked
+  ["quiz", "FAQ", "/faq"], // Clearly Q&A focused
+  ["support_agent", "Support", "/support"], // Human support interaction
 ];
