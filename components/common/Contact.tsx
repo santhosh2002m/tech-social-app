@@ -7,13 +7,13 @@ import { usePathname } from "next/navigation";
 import SingleContact from "./SingleContact";
 import avatar_6 from "/public/images/avatar-6.png";
 
-const Contact = ({ children }) => {
+const Contact = () => {
   const pathname = usePathname();
 
   return (
     <>
       {/* children props */}
-      {children}
+      {/* {children} */}
 
       <div className="d-flex flex-column gap-6">
         {pathname === "/" && (
