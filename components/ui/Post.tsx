@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import PostAction from "./PostAction";
-import { PostData, PollOption } from "./postData";
+import { PostData, PollOption } from "../../data/postData";
 
 interface PostProps {
   post: PostData;
