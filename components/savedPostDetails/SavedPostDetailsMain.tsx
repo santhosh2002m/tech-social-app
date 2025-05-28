@@ -29,7 +29,7 @@ const SavedPostDetailsMain = () => {
                 <Post post={data} />
 
                 {/* Post Reaction */}
-                <PostReaction />
+                {/* <PostReaction /> */}
 
                 {/* Write Comment */}
                 <WriteComment />
