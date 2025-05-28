@@ -1,3 +1,4 @@
+// FollowCard.tsx
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import ContactAction from "../ui/ContactAction";
@@ -26,12 +27,7 @@ const FollowCard = ({ data }: { data: FollowProps }) => {
           </div>
         </div>
         {/* Contact Action */}
-        <ContactAction
-          actionList={[
-            ["Unfollow", "person_remove"],
-            ["Hide Contact", "hide_source"],
-          ]}
-        />
+        <ContactAction sectionType="followings" />
       </div>
     </div>
   );

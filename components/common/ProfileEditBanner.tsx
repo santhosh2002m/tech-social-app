@@ -63,6 +63,7 @@ const ProfileEditBanner = () => {
 
             {/* Contact Action */}
             <ContactAction
+              sectionType="followings"
               actionList={[
                 ["Block", "lock"],
                 ["Report", "flag"],

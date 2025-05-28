@@ -48,6 +48,7 @@ const ChatOption = () => {
                 </div>
                 {/* Contact Action */}
                 <ContactAction
+                  sectionType="followings"
                   actionList={[
                     ["Unfollow", "person_remove"],
                     ["Hide Contact", "hide_source"],

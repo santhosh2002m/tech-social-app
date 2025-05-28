@@ -31,7 +31,7 @@ const SavedPostCard = ({ post }: { post: PostProps }) => {
               <Image src={author_avt} className="max-un" alt="icon" />
             </Link>
             <p className="mdtxt">
-              Saved from {author} post in {category} COMMUNITY
+              Saved from {author}&apos;s post in {category} COMMUNITY
             </p>
           </div>
         </div>
@@ -47,6 +47,7 @@ const SavedPostCard = ({ post }: { post: PostProps }) => {
           </Link>
           {/* Contact Action */}
           <ContactAction
+            sectionType="followings"
             actionList={[
               ["Unfollow", "person_remove"],
               ["Hide", "hide_source"],

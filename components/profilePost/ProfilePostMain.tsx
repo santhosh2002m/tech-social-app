@@ -126,7 +126,7 @@ const ProfilePostMain = () => {
               </div>
               <div className="sidebar-area p-5">
                 {/* Contact */}
-                <Contact>
+                <Contact sectionType="followings">
                   <div className="mb-4">
                     <h6 className="d-inline-flex">Contact</h6>
                   </div>

@@ -21,7 +21,7 @@ const EventsMain = () => {
           <div className="sidebar-wrapper d-flex al-item justify-content-end justify-content-xl-center flex-column flex-md-row flex-xl-column flex gap-6">
             <div className="sidebar-area p-5">
               {/* Contact */}
-              <Contact>
+              <Contact sectionType="followings">
                 <div className="mb-4">
                   <h6 className="d-inline-flex">Contact</h6>
                 </div>

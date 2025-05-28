@@ -7,14 +7,17 @@ import { usePathname } from "next/navigation";
 import SingleContact from "./SingleContact";
 import avatar_6 from "/public/images/avatar-6.png";
 
-const Contact = () => {
+interface ContactProps {
+  children: React.ReactNode;
+  sectionType: "followers" | "followings";
+}
+
+const Contact = ({ children, sectionType }: ContactProps) => {
   const pathname = usePathname();
 
   return (
     <>
-      {/* children props */}
-      {/* {children} */}
-
+      {children}
       <div className="d-flex flex-column gap-6">
         {pathname === "/" && (
           <div className="profile-area d-center position-relative align-items-center justify-content-between">
@@ -45,8 +48,7 @@ const Contact = () => {
             key={itm.id}
             className="profile-area d-center justify-content-between"
           >
-            {/* Single Contact     */}
-            <SingleContact data={itm} />
+            <SingleContact data={itm} sectionType={sectionType} />
           </div>
         ))}
       </div>

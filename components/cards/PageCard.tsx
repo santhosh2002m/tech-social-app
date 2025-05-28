@@ -41,6 +41,7 @@ const PageCard = ({ page }: { page: PageProps }) => {
 
         {/* Contact Action */}
         <ContactAction
+          sectionType="followings"
           actionList={[
             ["Unfollow", "person_remove"],
             ["Hide", "hide_source"],

@@ -23,15 +23,15 @@ export const friendLeftMenu = [
 ];
 
 export const homeLeftMenu = [
-  ["home", "Home", "/"], // Kept 'home' as it's universally clear
-  ["forum", "Chats", "/chats"], // 'forum' suggests interactive messaging
-  ["sparkle", "Explore AI", "/explore-ai"], // 'sparkle' evokes AI's innovative magic
-  ["dynamic_feed", "Posts", "/posts"], // 'dynamic_feed' emphasizes a lively post stream
-  ["favorite_border", "Like Posts", "/liked-posts"], // 'favorite_border' is a sleek, modern like icon
-  ["share", "Share Posts", "/shared-posts"], // Reverted to 'share' for simplicity and recognition
-  ["comment_bank", "Comments Posts", "/commented-posts"], // 'comment_bank' is specific to comment storage
-  ["alternate_email", "Mentions Posts", "/mentioned-posts"], // Reverted to 'alternate_email' for mention clarity
-  ["bookmark_border", "Saved Posts", "/saved-posts"], // 'bookmark_border' is a cleaner saved icon
-  ["live_help", "FAQ", "/faq"], // 'live_help' implies active FAQ support
-  ["headset_mic", "Support", "/support"], // 'headset_mic' suggests direct, personal support
+  ["home", "Home", "/"], // Unchanged, 'home' is clear and standard
+  ["chat_bubble", "Chats", "/chats"], // 'chat_bubble' is more specific to messaging than 'chat'
+  ["auto_awesome", "Explore AI", "/explore-ai"], // 'auto_awesome' conveys AI's innovative nature
+  ["feed", "Posts", "/posts"], // 'feed' better represents a social media post stream
+  ["favorite", "Like Posts", "/liked-posts"], // 'favorite' is more emotive and specific for likes
+  ["ios_share", "Share Posts", "/shared-posts"], // 'ios_share' is a modern share icon
+  ["chat_bubble_outline", "Comments Posts", "/commented-posts"], // 'chat_bubble_outline' fits comments well
+  ["tag", "Mentions Posts", "/mentioned-posts"], // 'tag' is concise and relevant for mentions
+  ["bookmark", "Saved Posts", "/saved-posts"], // 'bookmark' is more precise for saved content
+  ["help_outline", "FAQ", "/faq"], // 'help_outline' is cleaner and more modern for FAQ
+  ["support_agent", "Support", "/support"], // 'support_agent' implies direct help or contact
 ];

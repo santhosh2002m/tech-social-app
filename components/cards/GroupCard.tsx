@@ -22,6 +22,7 @@ const GroupCard = ({ data }: { data: GroupProps }) => {
         <div className="abs-area w-100 position-absolute top-0 p-3 d-center justify-content-end">
           {/* Contact Action */}
           <ContactAction
+            sectionType="followings" // Added sectionType to satisfy ContactActionProps
             actionList={[
               ["Unfollow", "person_remove"],
               ["Hide", "hide_source"],
@@ -35,7 +36,7 @@ const GroupCard = ({ data }: { data: GroupProps }) => {
       <Link href={`/groups/${id}`}>
         <h6 className="m-0 mb-2 mt-3">{name}</h6>
       </Link>
-      <p className="smtxt public-group">Public Group</p>
+      <p className="smtxt community-group">Community Group</p>
       <div className="friends-list d-center mt-3 gap-1 text-center">
         <ul className="d-center">
           <li>

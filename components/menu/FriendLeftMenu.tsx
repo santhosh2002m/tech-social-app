@@ -49,7 +49,7 @@ const FriendLeftMenu = () => {
           ))}
         </ul>
         {/* Contact */}
-        <Contact>
+        <Contact sectionType="followings">
           <div className="mb-4">
             <h6 className="d-inline-flex">Contact</h6>
           </div>

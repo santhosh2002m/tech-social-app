@@ -1,3 +1,4 @@
+// EventCard.tsx
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import ContactAction from "../ui/ContactAction";
@@ -20,12 +21,7 @@ const EventCard = ({ data }: { data: EventCardProps }) => {
         <div className="abs-area w-100 position-absolute top-0 p-3 d-center justify-content-between">
           <span className="date-area mdtxt">{published}</span>
           {/* Contact Action */}
-          <ContactAction
-            actionList={[
-              ["Unfollow", "person_remove"],
-              ["Hide", "hide_source"],
-            ]}
-          />
+          <ContactAction sectionType="followings" />
         </div>
       </div>
       <Link href={`/event/${id}`}>

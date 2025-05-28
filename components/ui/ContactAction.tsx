@@ -1,4 +1,24 @@
-const ContactAction = ({ actionList }: { actionList: string[][] }) => {
+interface ContactActionProps {
+  sectionType: "followers" | "followings";
+  actionList?: [string, string][]; // Optional custom action list
+}
+
+const ContactAction = ({ sectionType, actionList }: ContactActionProps) => {
+  // Define default actions
+  const defaultActionLists = {
+    followers: [
+      ["Remove Follower", "person_remove"],
+      ["Hide Contact", "hide_source"],
+    ],
+    followings: [
+      ["Unfollow", "person_remove"],
+      ["Hide Contact", "hide_source"],
+    ],
+  };
+
+  // Use actionList if provided, otherwise fall back to defaultActionLists[sectionType]
+  const actions = actionList || defaultActionLists[sectionType];
+
   return (
     <div className="btn-group cus-dropdown dropend">
       <button
@@ -10,7 +30,7 @@ const ContactAction = ({ actionList }: { actionList: string[][] }) => {
         <i className="material-symbols-outlined fs-xxl m-0">more_horiz</i>
       </button>
       <ul className="dropdown-menu p-4 pt-2">
-        {actionList?.map(([itm, icon], i) => (
+        {actions?.map(([itm, icon], i) => (
           <li key={i}>
             <button className="droplist d-flex align-items-center gap-2">
               <i className="material-symbols-outlined mat-icon">{icon}</i>

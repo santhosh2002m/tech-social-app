@@ -25,7 +25,7 @@ const GroupEventCard = () => {
               <Image src={avatar_6} className="max-un" alt="icon" />
             </Link>
             <p className="mdtxt">
-              Saved from Atikur Rahman&#39;s post in UI/UX DESIGN COMMUNITY
+              Saved from Atikur Rahman&apos;s post in UI/UX DESIGN COMMUNITY
             </p>
           </div>
         </div>
@@ -38,6 +38,7 @@ const GroupEventCard = () => {
           </Link>
           {/* Contact Action */}
           <ContactAction
+            sectionType="followings"
             actionList={[
               ["Unfollow", "person_remove"],
               ["Hide", "hide_source"],
