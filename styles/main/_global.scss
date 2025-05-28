@@ -2012,3 +2012,89 @@ textarea::placeholder {
 .navbar {
   padding-top: 10px !important;
 }
+
+/* Accordion Custom Styling */
+.accordion-item-custom {
+  background-color: var(--body-color) !important; /* Black background */
+  border: 1px solid var(--border-color) !important; /* Gray border (#333333) */
+  border-radius: 8px !important;
+  overflow: hidden; /* Prevent content from breaking border-radius */
+  position: relative; /* Ensure border stays on top */
+}
+
+.accordion-item-custom .accordion-header {
+  background-color: transparent !important; /* Ensure header doesn’t interfere */
+}
+
+.accordion-button-custom {
+  background-color: var(--body-color) !important; /* Black background */
+  color: var(--heading-1st-color) !important; /* White text */
+  border: none !important;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between; /* Ensure text and chevron are spaced */
+  align-items: center;
+  width: 100%;
+  border-radius: 8px 8px 0 0 !important; /* Match top corners with parent */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button-custom:not(.collapsed) {
+  background-color: var(
+    --border-color
+  ) !important; /* Slightly lighter gray when open */
+  color: var(--primary-color) !important; /* Orange text when open (#f05a28) */
+  border-bottom: 1px solid var(--border-color) !important; /* Add a bottom border when open to separate from body */
+  border-radius: 8px 8px 0 0 !important; /* Ensure top corners remain rounded */
+}
+
+.accordion-button-custom::after {
+  background-image: none !important; /* Remove default Bootstrap chevron */
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-bottom: 2px solid var(--primary-color) !important; /* Orange chevron */
+  border-right: 2px solid var(--primary-color) !important; /* Orange chevron */
+  transform: rotate(45deg) !important;
+  transition: transform 0.3s ease !important;
+  margin-left: auto; /* Push chevron to the right */
+}
+
+.accordion-button-custom:not(.collapsed)::after {
+  transform: rotate(-135deg) !important; /* Rotate chevron up when open */
+}
+
+.accordion-button-custom h6 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: inherit; /* Inherit white/orange color from parent */
+}
+
+.accordion-button-custom:focus {
+  box-shadow: none !important; /* Remove default focus shadow */
+}
+
+.accordion-body {
+  background-color: var(--body-color) !important; /* Black background */
+  padding: 16px;
+  border-radius: 0 0 8px 8px !important; /* Match bottom corners with parent */
+}
+
+.accordion-collapse {
+  background-color: var(
+    --body-color
+  ) !important; /* Ensure collapse background matches */
+}
+
+.accordion-item-custom + .accordion-item-custom {
+  margin-top: 16px; /* Consistent spacing between accordion items */
+}
+
+/* Ensure no gaps in border when collapsed or expanded */
+.accordion-item-custom .accordion-collapse.show {
+  border-top: none !important; /* Prevent double border between button and body */
+}

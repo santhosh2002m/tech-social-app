@@ -1,3 +1,4 @@
+// SingleContact.tsx
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import ContactAction from "../ui/ContactAction";
@@ -8,7 +9,12 @@ interface ContactProps {
   avt: StaticImageData;
 }
 
-const SingleContact = ({ data }: { data: ContactProps }) => {
+interface SingleContactProps {
+  data: ContactProps;
+  sectionType: "followers" | "followings";
+}
+
+const SingleContact = ({ data, sectionType }: SingleContactProps) => {
   const { avt, id, name } = data;
 
   return (
@@ -25,13 +31,7 @@ const SingleContact = ({ data }: { data: ContactProps }) => {
           </h6>
         </div>
       </div>
-      {/* Contact Action */}
-      <ContactAction
-        actionList={[
-          ["Unfollow", "person_remove"],
-          ["Hide Contact", "hide_source"],
-        ]}
-      />
+      <ContactAction sectionType={sectionType} />
     </>
   );
 };
