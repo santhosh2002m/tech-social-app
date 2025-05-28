@@ -1,0 +1,10 @@
+.Ts_searchBar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-direction: row-reverse !important;
+}
+
+.Ts_searchBar_input {
+  padding: 0px 10px !important;
+}

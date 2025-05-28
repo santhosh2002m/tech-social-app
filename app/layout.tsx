@@ -11,17 +11,17 @@ import { useEffect } from "react";
 // modal video
 import "node_modules/react-modal-video/scss/modal-video.scss";
 
-//slick
+// slick
 import "slick-carousel/slick/slick.css";
 
-//custon
+// custom
 import ScrollToTop from "@/components/scrollToTop/ScrollToTop";
 import "../styles/globals.scss";
+import "../styles/TS_styles.scss";
 
 export default function RootLayout({
   children,
 }: {
-  Component: any;
   children: React.ReactNode;
 }) {
   const pathname = usePathname();

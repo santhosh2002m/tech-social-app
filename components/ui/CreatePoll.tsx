@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Calendar, { Value } from "react-calendar";
+// import Calendar, { Value } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 
 interface CreatePollProps {
@@ -91,18 +91,18 @@ const CreatePoll: React.FC<CreatePollProps> = ({ onCancel, onSubmitPoll }) => {
   };
 
   // Handle calendar change with correct type and event parameter
-  const handleCalendarChange = (
-    value: Value,
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void => {
-    if (value instanceof Date) {
-      setTempDate(value);
-    } else if (Array.isArray(value) && value[0] instanceof Date) {
-      setTempDate(value[0]); // Use first date if range is provided (though selectRange={false})
-    } else {
-      setTempDate(null);
-    }
-  };
+  // const handleCalendarChange = (
+  //   value: Value,
+  //   event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  // ): void => {
+  //   if (value instanceof Date) {
+  //     setTempDate(value);
+  //   } else if (Array.isArray(value) && value[0] instanceof Date) {
+  //     setTempDate(value[0]); // Use first date if range is provided (though selectRange={false})
+  //   } else {
+  //     setTempDate(null);
+  //   }
+  // };
 
   return (
     <div className="poll-creation w-100">
@@ -171,13 +171,13 @@ const CreatePoll: React.FC<CreatePollProps> = ({ onCancel, onSubmitPoll }) => {
         </button>
         {showCalendar && (
           <div className="calendar-wrapper">
-            <Calendar
+            {/* <Calendar
               onChange={handleCalendarChange}
               value={tempDate || pollDuration}
               minDate={new Date()}
               selectRange={false}
               className="poll-calendar"
-            />
+            /> */}
             <div className="poll-calendar-buttons">
               <button onClick={handleCalendarCancel}>Cancel</button>
               <button onClick={handleCalendarOk}>OK</button>

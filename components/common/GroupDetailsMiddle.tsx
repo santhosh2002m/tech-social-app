@@ -4,7 +4,7 @@ import FeedTab from "../groupDetails/FeedTab";
 import MediaTab from "../groupDetails/MediaTab";
 import VideosTab from "../groupDetails/VideosTab";
 
-const GroupDetailsMiddle = ({ children }: { children: JSX.Element }) => {
+const GroupDetailsMiddle = ({ children }: { children: any }) => {
   return (
     <>
       <div className="banner-area pages-create mb-5">

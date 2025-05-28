@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ProductSlider from "../sliders/ProductSlider";
 
-const ProductDetails = ({ children }: { children: JSX.Element }) => {
+const ProductDetails = ({ children }: { children: any }) => {
   const [product, setProduct] = useState<number>(1);
 
   return (

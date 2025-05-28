@@ -30,7 +30,7 @@ const ReplayReaction = () => {
         <AnimatePresence initial={false}>
           {expanded && (
             <motion.div
-              className="d-flex gap-3"
+              // className="d-flex gap-3"
               key="content"
               initial="collapsed"
               animate="open"

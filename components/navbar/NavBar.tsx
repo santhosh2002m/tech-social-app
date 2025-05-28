@@ -47,23 +47,63 @@ const NavBar = ({ clss = "container" }: { clss: string }) => {
             <Link href="/" className="navbar-brand">
               <Image src={logo} className="logo" alt="logo" />
             </Link>
-            <button
+            {/* <button
               className="button search-active d-block d-md-none"
               onClick={() => setActiveSearchForm(!activeSearchForm)}
             >
               <i className="d-center material-symbols-outlined fs-xxl mat-icon">
                 search
               </i>
-            </button>
-            <div className={`search-form ${activeSearchForm ? "active" : ""}`}>
-              <form action="#" className="input-area d-flex align-items-center">
-                <input type="text" placeholder="search" autoComplete="off" />
-                <button type="button" className="aiq-button">
-                  AI Q
-                </button>
-                <i className="material-symbols-outlined mat-icon search-icon">
-                  search
-                </i>
+            </button> */}
+            <div className={`search-form  ${activeSearchForm ? "active" : ""}`}>
+              <form
+                action="#"
+                className="Ts_searchBar input-area d-flex align-items-center"
+              >
+                {" "}
+                <input
+                  type="text"
+                  placeholder="search"
+                  autoComplete="off"
+                  className="Ts_searchBar_input"
+                />
+                <div>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="20"
+                      cy="20"
+                      r="16"
+                      stroke="#F15A29"
+                      strokeWidth="4"
+                      fill="black"
+                    />
+                    <text
+                      x="13"
+                      y="25"
+                      fontFamily="Arial, sans-serif"
+                      fontWeight="bold"
+                      fontSize="14"
+                      fill="#F15A29"
+                    >
+                      AI
+                    </text>
+                    <line
+                      x1="31"
+                      y1="31"
+                      x2="44"
+                      y2="44"
+                      stroke="#F15A29"
+                      strokeWidth="4"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
               </form>
             </div>
 
