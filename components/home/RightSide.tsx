@@ -33,9 +33,9 @@ const RightSide = () => {
           <div className="sidebar-area p-5">
             {/* Contact */}
             <Contact>
-              <div className="mb-4">
+              {/* <div className="mb-4">
                 <h6 className="d-inline-flex">Contact</h6>
-              </div>
+              </div> */}
             </Contact>
           </div>
         </div>
