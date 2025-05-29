@@ -2098,3 +2098,30 @@ textarea::placeholder {
 .accordion-item-custom .accordion-collapse.show {
   border-top: none !important; /* Prevent double border between button and body */
 }
+
+.banner-area .avatar-area {
+  width: 1236px;
+  height: 300px;
+  background-color: #1a1a1a; /* Slightly lighter than black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner-area .avatar-area .banner-text {
+  color: #f05a28; /* Orange text for TechSocial */
+  font-size: 48px; /* Adjust font size to fit well */
+  font-weight: 700;
+  font-family: var(--body-font);
+  text-align: center;
+}
+
+.setting-size-120 {
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.profile-icon-content {
+  color: #f05a28 !important;
+}

@@ -3,48 +3,43 @@ import Contact from "../common/Contact";
 import MakePost from "../common/MakePost";
 import NewsFeeds from "../common/NewsFeeds";
 import Photos from "../marketplacePost/Photos";
+import HomeLeft from "../menu/HomeLeft";
 
 const bioData = [
   {
     id: 1,
-    type: "Developer",
-    icon: "integration_instructions",
+    type: "santhosh", // Placeholder for username
+    icon: "person", // Icon for username
     class: "",
   },
   {
     id: 2,
-    type: "Master's degree",
-    icon: "school",
+    type: "Cloud Industry",
+    icon: "factory", // Matches the industry icon in the screenshot
     class: "",
   },
   {
     id: 3,
-    type: "test@mail.com",
-    icon: "flag",
-    class: "link",
+    type: "New Delhi",
+    icon: "pin_drop", // Matches the location pin icon in the screenshot
+    class: "",
   },
   {
     id: 4,
-    type: "www.wisoky.com",
-    icon: "language",
+    type: "www.test.com",
+    icon: "link", // Matches the link icon in the screenshot
     class: "link",
   },
   {
     id: 5,
-    type: "(316) 555-0116",
-    icon: "call",
+    type: "100 Followers", // Placeholder for followers
+    icon: "group", // Icon for followers
     class: "",
   },
   {
     id: 6,
-    type: "USA",
-    icon: "pin_drop",
-    class: "",
-  },
-  {
-    id: 7,
-    type: "775 Rolling Green Rd.",
-    icon: "house",
+    type: "50 Following", // Placeholder for following
+    icon: "group_add", // Icon for following
     class: "",
   },
 ];
@@ -53,36 +48,25 @@ const ProfilePostMain = () => {
   return (
     <>
       <div className="col-xxl-3 col-xl-3 col-lg-4 col-6 cus-z2">
-        <div className="d-inline-block d-lg-none">
-          <button className="button profile-active mb-4 mb-lg-0 d-flex align-items-center gap-2">
-            <i className="material-symbols-outlined mat-icon"> tune </i>
-            <span>My profile</span>
-          </button>
-        </div>
+        <HomeLeft clss="d-lg-none" />
+      </div>
+      <div className="col-xxl-6 col-xl-5 col-lg-8 mt-0 mt-lg-10 mt-xl-0 d-flex flex-column gap-7 cus-z">
+        {/* Make Post */}
+        <MakePost />
+
+        {/* Feeds */}
+        <NewsFeeds clss="p-3 p-sm-5" />
+      </div>
+      <div className="col-xxl-3 col-xl-3 col-lg-4 col-6 cus-z2">
         <div className="profile-sidebar cus-scrollbar max-width p-5">
-          <div className="d-block d-lg-none position-absolute end-0 top-0">
-            <button className="button profile-close">
-              <i className="material-symbols-outlined mat-icon fs-xl">close</i>
-            </button>
-          </div>
           <div className="sidebar-area">
             <div className="mb-3">
               <h6 className="d-inline-flex">About</h6>
             </div>
             <p className="mdtxt descript">
-              Lorem ipsum dolor sit amet cons all Ofectetur. Pellentesque ipsum
-              necat congue pretium cursus orci. It Commodo donec tellus lacus
-              pellentesque sagittis habitant quam amet praesent.
+              Co-Founder & CEO DataCenter Hub | WhiteNoise Corporation | Tech
+              Influencer
             </p>
-            <Link
-              href="#"
-              className="cmn-btn w-100 mt-5 alt third d-center gap-1"
-            >
-              <i className="material-symbols-outlined mat-icon fs-2">
-                edit_note
-              </i>
-              Edit Bio
-            </Link>
           </div>
           <div className="sidebar-area mt-5">
             <div className="mb-2">
@@ -98,41 +82,6 @@ const ProfilePostMain = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </div>
-      <div className="col-xxl-6 col-xl-5 col-lg-8 mt-0 mt-lg-10 mt-xl-0 d-flex flex-column gap-7 cus-z">
-        {/* Make Post */}
-        <MakePost />
-
-        {/* Feeds */}
-        <NewsFeeds clss="p-3 p-sm-5" />
-      </div>
-      <div className="col-xxl-3 col-xl-4 col-lg-4 col-6 mt-5 mt-xl-0">
-        <div className="cus-overflow cus-scrollbar sidebar-head">
-          <div className="d-flex justify-content-end">
-            <div className="d-block d-xl-none me-4">
-              <button className="button toggler-btn mb-4 mb-lg-0 d-flex align-items-center gap-2">
-                <span>My List</span>
-                <i className="material-symbols-outlined mat-icon"> tune </i>
-              </button>
-            </div>
-          </div>
-          <div className="cus-scrollbar side-wrapper">
-            <div className="sidebar-wrapper d-flex flex-column gap-6 max-width">
-              <div className="sidebar-area post-item p-5">
-                {/* Photos */}
-                <Photos />
-              </div>
-              <div className="sidebar-area p-5">
-                {/* Contact */}
-                <Contact sectionType="followings">
-                  <div className="mb-4">
-                    <h6 className="d-inline-flex">Contact</h6>
-                  </div>
-                </Contact>
-              </div>
-            </div>
           </div>
         </div>
       </div>

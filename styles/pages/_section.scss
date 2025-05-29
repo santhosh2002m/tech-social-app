@@ -392,13 +392,6 @@
         position: relative;
         margin-left: 15px;
         &::before {
-          position: absolute;
-          content: "";
-          background-color: var(--para-1st-color);
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          left: -10px;
         }
       }
     }
