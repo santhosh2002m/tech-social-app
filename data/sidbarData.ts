@@ -28,10 +28,11 @@ export const homeLeftMenu = [
   ["cognition", "Explore AI", "/explore-ai"], // Clearly symbolizes AI/brainpower
   ["newspaper", "Posts", "/posts"], // Content or news feed
   ["thumb_up_alt", "Liked Posts", "/liked-posts"], // Minimal and modern like button
-  ["reply", "Shared Posts", "/shared-posts"], // Clear indication of sharing action
-  ["mode_comment", "Commented Posts", "/commented-posts"], // Clean and simple for comments
-  ["alternate_email", "Mentioned Posts", "/mentioned-posts"], // '@' for mentions
-  ["turned_in", "Saved Posts", "/saved-posts"], // Saved/bookmarked
+  ["reply", "Shared ", "/shared-posts"], // Clear indication of sharing action
+  ["mode_comment", "Commented ", "/commented-posts"], // Clean and simple for comments
+  ["alternate_email", "Mentioned ", "/mentioned-posts"], // '@' for mentions
+  ["turned_in", "Saved ", "/saved-posts"], // Saved/bookmarked
   ["quiz", "FAQ", "/faq"], // Clearly Q&A focused
   ["support_agent", "Support", "/support"], // Human support interaction
+  ["subscriptions", "Subscriptions", "/subscription"], // New: Subscription
 ];

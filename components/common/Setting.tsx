@@ -55,12 +55,6 @@ const Setting = ({ activeHandler }: { activeHandler: (a: string) => void }) => {
         </div>
         <ul>
           <li>
-            <Link href="/profile/edit" className="mdtxt">
-              <i className="material-symbols-outlined mat-icon"> settings </i>
-              Settings & Privacy
-            </Link>
-          </li>
-          <li>
             <Link href="/#" className="mdtxt">
               <i className="material-symbols-outlined mat-icon">
                 power_settings_new
@@ -69,29 +63,6 @@ const Setting = ({ activeHandler }: { activeHandler: (a: string) => void }) => {
             </Link>
           </li>
         </ul>
-        <div className="switch-wrapper mt-4 d-flex gap-1 align-items-center">
-          <i
-            className={`mat-icon material-symbols-outlined sun icon ${
-              theme === "light" && "active"
-            }`}
-          >
-            light_mode
-          </i>
-          <label className="switch">
-            <input type="checkbox" className="checkbox" onClick={handleTheme} />
-            <span
-              className={`slider ${theme === "dark" ? " slider-active" : ""}`}
-            ></span>
-          </label>
-          <i
-            className={`mat-icon material-symbols-outlined moon icon ${
-              theme === "dark" && "active"
-            }`}
-          >
-            dark_mode
-          </i>
-          <span className="mdtxt ms-2">Dark mode</span>
-        </div>
       </div>
     </>
   );

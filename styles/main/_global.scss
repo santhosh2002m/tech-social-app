@@ -2122,6 +2122,371 @@ textarea::placeholder {
   height: 120px !important;
 }
 
-.profile-icon-content {
-  color: #f05a28 !important;
+/* About and Info Section Styling */
+.about-info-section {
+  background-color: var(--body-color); /* Black background */
+  padding: 16px 0; /* Add some padding for spacing */
+}
+
+.about-section h6,
+.info-section h6 {
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--heading-1st-color); /* White text */
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.about-section .about-text {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--para-1st-color); /* White text */
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.info-section .info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-section .info-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.info-section .info-list .mdtxt {
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.info-section .info-list .material-symbols-outlined {
+  color: var(--icon-color); /* White icons */
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.info-section .info-list li:hover .material-symbols-outlined {
+  color: var(--primary-color); /* Orange on hover */
+}
+
+.info-section .info-list .info-content {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--para-1st-color); /* White text */
+  font-weight: 400;
+}
+
+.info-section .info-list .info-content.link {
+  color: var(--primary-color); /* Orange for links */
+}
+
+.info-section .info-list .info-content.link:hover {
+  color: var(--highlight-2nd-color); /* Slightly different orange on hover */
+}
+
+.info-section .info-list .separator {
+  color: var(--para-1st-color); /* White separator */
+  margin: 0 8px; /* Space around the separator */
+  font-size: 14px;
+}
+
+/* Profile Banner Layout Adjustments */
+.banner-area .top-area {
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.banner-area .avatar-item {
+  flex-shrink: 0;
+  display: flex; /* Ensure the avatar is centered within its container */
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+  position: relative;
+  margin-left: 1rem; /* Add slight margin to balance the layout */
+}
+
+.banner-area .avatar-img {
+  border-radius: 50%;
+  border: 3px solid var(--primary-color); /* Thicker orange border for better look */
+  box-shadow: var(--box-shadow); /* Add a subtle shadow for depth */
+  object-fit: cover; /* Ensure the image fits nicely within the circular frame */
+}
+
+.banner-area .text-area {
+  flex: 1;
+  position: relative;
+}
+
+/* Buttons Section at Top-Right */
+.banner-area .text-area .btn-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .banner-area .text-area .btn-section {
+    position: static;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.banner-area .text-area .btn-section .cmn-btn {
+  background-color: var(--primary-color);
+  color: var(--heading-1st-color);
+  padding: 6px 14px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.banner-area .text-area .btn-section .cmn-btn:hover {
+  background-color: var(--highlight-2nd-color);
+}
+
+.banner-area .text-area .btn-section .cmn-btn i {
+  color: var(--heading-1st-color); /* White icon */
+  font-size: 18px;
+}
+
+/* Contact Action Dropdown */
+.banner-area .text-area .btn-section .cus-dropdown .dropdown-toggle {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-area .text-area .btn-section .cus-dropdown .dropdown-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.banner-area .text-area .btn-section .cus-dropdown .dropdown-icon span {
+  font-size: 18px;
+  color: var(--heading-1st-color); /* White dropdown icon */
+}
+
+/* Content Sections with Four Grid Layout */
+.banner-area .content-sections {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2rem;
+  position: relative;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .banner-area .content-sections {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 0;
+  }
+}
+
+/* Section 1: User Info */
+.banner-area .user-info-section {
+  min-width: 250px;
+}
+
+.banner-area .user-info-section h4.xltxt {
+  font-size: 28px;
+  line-height: 36px;
+  margin-bottom: 6px;
+  color: var(--heading-1st-color);
+}
+
+.banner-area .user-info-section p.text-orange-500.lgtxt {
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.banner-area .user-info-section .about-text.lgtxt {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--para-1st-color);
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+/* Section 2: Stats */
+.banner-area .stats-section {
+  min-width: 150px;
+  position: relative;
+}
+
+.banner-area .stats-section::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .banner-area .stats-section::before {
+    display: none;
+  }
+}
+
+.banner-area .stats-section .d-flex {
+  gap: 6px;
+}
+
+.banner-area .stats-section .d-flex .material-symbols-outlined {
+  color: var(--heading-1st-color); /* White icons by default */
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.banner-area .stats-section .d-flex .profile-icon-content.lgtxt {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--heading-1st-color); /* White text by default */
+}
+
+/* Hover effect for stats section */
+.banner-area .stats-section .d-flex:hover .material-symbols-outlined,
+.banner-area .stats-section .d-flex:hover .profile-icon-content {
+  color: var(--primary-color); /* Orange on hover */
+}
+
+/* Section 3: Bio Data */
+.banner-area .bio-data-section {
+  min-width: 150px;
+  position: relative;
+}
+
+.banner-area .bio-data-section::before {
+  content: "";
+  position: absolute;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .banner-area .bio-data-section::before {
+    display: none;
+  }
+}
+
+.banner-area .bio-data-section .d-flex {
+  gap: 6px;
+}
+
+.banner-area .bio-data-section .d-flex .material-symbols-outlined {
+  color: var(--heading-1st-color); /* White icons by default */
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.banner-area .bio-data-section .d-flex .info-content.lgtxt {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--heading-1st-color); /* White text by default */
+}
+
+.banner-area .bio-data-section .info-content.link {
+  color: var(--primary-color);
+}
+
+.banner-area .bio-data-section .info-content.link:hover {
+  color: var(--highlight-2nd-color);
+}
+
+/* Hover effect for bio data section */
+.banner-area .bio-data-section .d-flex:hover .material-symbols-outlined,
+.banner-area .bio-data-section .d-flex:hover .info-content {
+  color: var(--primary-color); /* Orange on hover */
+}
+
+/* Section 4: Empty Space */
+.banner-area .empty-section {
+  min-width: 150px;
+}
+
+/* Navigation Tabs */
+.banner-area .page-details .nav {
+  border-top: 1px solid var(--border-color);
+}
+
+.banner-area .page-details .nav .nav-link.lgtxt {
+  color: var(--heading-1st-color);
+  font-size: 18px;
+  line-height: 26px;
+  padding: 14px 18px;
+  transition: color 0.3s ease;
+}
+
+.banner-area .page-details .nav .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.banner-area .page-details .nav .nav-link.active {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.banner-area .text-area .btn-section {
+  display: flex;
+  align-items: end;
+  gap: 0.75rem;
+  position: absolute;
+  bottom: 0; /* Reverted to bottom: 0 as requested */
+  right: 0;
+  z-index: 20; /* Increased z-index to ensure buttons are above other elements */
+  padding: 8px; /* Add padding to prevent clipping */
+  pointer-events: auto; /* Ensure click events are captured */
+}
+
+@media (max-width: 768px) {
+  .banner-area .text-area .btn-section {
+    position: static; /* Reset to static on mobile to avoid overlap issues */
+    margin-bottom: 1.5rem;
+    justify-content: flex-end; /* Align buttons to the right on mobile */
+    padding: 0; /* Reset padding on mobile */
+  }
+}
+
+/* Ensure text-area is a proper positioning context */
+.banner-area .text-area {
+  position: relative;
+  z-index: 5; /* Ensure text-area is above other elements but below btn-section */
+}
+
+/* Ensure buttons and dropdown are clickable */
+.banner-area .btn-section .cmn-btn,
+.banner-area .btn-section .cus-dropdown {
+  position: relative;
+  z-index: 25; /* Higher z-index for buttons and dropdown */
+}
+
+/* Ensure dropdown menu is visible */
+.banner-area .btn-section .cus-dropdown .dropdown-menu {
+  z-index: 30; /* Highest z-index for dropdown menu */
+  min-width: 120px; /* Ensure menu is wide enough */
+  top: 100%; /* Position below the toggle button */
+  right: 0; /* Align with right edge of toggle */
 }

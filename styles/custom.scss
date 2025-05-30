@@ -57,11 +57,9 @@ body {
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // background-color: #000000;
 }
 
 .margin-unset {
-  // Corrected typo from "marign-unset"
   margin-bottom: 10px !important;
   margin-top: 2px !important;
 }
@@ -432,7 +430,6 @@ body {
       display: flex;
       width: 100%;
       gap: 0.75rem; // gap-3
-      //   padding-top: 1.5rem; // Removed padding-top to rely on checkbox-container margin
 
       &.mobile-only {
         display: flex;
@@ -492,7 +489,61 @@ body {
 }
 
 .black-bg {
-  background-color: black !important;
+  background-color: #2a3435 !important; // Match the background of other inputs
+}
+
+// Added styles for password container with eye icon
+.password-container {
+  position: relative;
+  width: 100%; // Ensure the container takes full width
+}
+
+.password-container input {
+  width: 100%; // Ensure the input takes full width of its container
+  margin: 0.5rem 0; // Match the margin of other inputs
+  border-radius: 0.25rem;
+  border: 1px solid $gradient-start; // Match the border of other inputs
+  background-color: #2a3435; // Match the background of other inputs
+  padding: 0.75rem 2.5rem 0.75rem 1rem; // Adjust padding-right for the eye icon
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $white;
+
+  &::placeholder {
+    color: $gray-400;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+    ring: 2px solid $gradient-start;
+  }
+
+  // Override autofill styles
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #2a3435 inset !important;
+    -webkit-text-fill-color: $white !important;
+    background-color: #2a3435 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  @media (min-width: $sm) {
+    padding: 0.875rem 2.5rem 0.875rem 1rem; // Adjust padding for larger screens
+  }
+}
+
+.password-container span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.2rem;
+  z-index: 10; // Ensure the icon is above the input
 }
 
 // Added styles for profile images to match the previous request

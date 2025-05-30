@@ -1,14 +1,16 @@
 import { useState } from "react";
 import "../../styles/custom.scss";
+import { FiEye, FiEyeOff } from "react-icons/fi"; // Import eye icons from react-icons
 
 export default function SignUp({ isRightPanelActive }) {
   const [showOtpForm, setShowOtpForm] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for confirm password visibility
 
   const [userProfile, setUserProfile] = useState({
     username: "",
     fullname: "",
     email: "",
-    phone: "",
     password: "",
     current_password: "",
   });
@@ -16,10 +18,8 @@ export default function SignUp({ isRightPanelActive }) {
   const [otp, setOtp] = useState("");
 
   function userSubmitProfile(e) {
-    // console.log(e.target);
     const { name, value } = e.target;
-    // console.log(name, value);
-    setUserProfile((prviousEl) => ({ ...prviousEl, [name]: value }));
+    setUserProfile((previousEl) => ({ ...previousEl, [name]: value }));
   }
 
   function onSubmit() {
@@ -27,7 +27,6 @@ export default function SignUp({ isRightPanelActive }) {
       userProfile.username === "" ||
       userProfile.fullname === "" ||
       userProfile.email === "" ||
-      userProfile.phone === "" ||
       userProfile.password === "" ||
       userProfile.current_password === ""
     ) {
@@ -44,7 +43,7 @@ export default function SignUp({ isRightPanelActive }) {
     >
       {!showOtpForm ? (
         <form className="form">
-          <h1 className="margin-unset">Sign Up</h1> {/* Corrected typo */}
+          <h1 className="margin-unset">Sign Up</h1>
           <input
             name="username"
             value={userProfile.username}
@@ -69,34 +68,35 @@ export default function SignUp({ isRightPanelActive }) {
             onChange={userSubmitProfile}
             className="black-bg"
           />
-          <input
-            name="phone"
-            value={userProfile.phone}
-            type="tel"
-            placeholder="Phone Number"
-            onChange={userSubmitProfile}
-            className="black-bg"
-          />
-          <input
-            name="password"
-            value={userProfile.password}
-            type="password"
-            placeholder="Password"
-            onChange={userSubmitProfile}
-            className="black-bg"
-          />
-          <input
-            name="current_password"
-            value={userProfile.current_password}
-            type="password"
-            placeholder="Confirm Password"
-            onChange={userSubmitProfile}
-            className="black-bg"
-          />
+          <div className="password-container">
+            <input
+              name="password"
+              value={userProfile.password}
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              onChange={userSubmitProfile}
+              className="black-bg"
+            />
+            <span onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? <FiEyeOff /> : <FiEye />}
+            </span>
+          </div>
+          <div className="password-container">
+            <input
+              name="current_password"
+              value={userProfile.current_password}
+              type={showConfirmPassword ? "text" : "password"}
+              placeholder="Confirm Password"
+              onChange={userSubmitProfile}
+              className="black-bg"
+            />
+            <span onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+              {showConfirmPassword ? <FiEyeOff /> : <FiEye />}
+            </span>
+          </div>
           <div className="checkbox-container">
             <input type="checkbox" id="terms" required />
             <label htmlFor="terms">
-              {/* <label className="label-flex">I agree to the</label> */}
               <p className="custom-style">
                 By Signing up, you are acknowledging that you have read,
                 understood and accept our{" "}
@@ -111,12 +111,7 @@ export default function SignUp({ isRightPanelActive }) {
             </label>
           </div>
           <div className="button-group">
-            <button
-              type="button"
-              onClick={() => {
-                onSubmit(); // logs userProfile
-              }}
-            >
+            <button type="button" onClick={onSubmit}>
               Request OTP
             </button>
           </div>
@@ -130,6 +125,7 @@ export default function SignUp({ isRightPanelActive }) {
             value={otp}
             type="text"
             placeholder="Enter OTP"
+            onChange={(e) => setOtp(e.target.value)}
           />
           <div className="button-group btn-margin">
             <button type="button" onClick={() => setShowOtpForm(false)}>

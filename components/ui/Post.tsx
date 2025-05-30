@@ -149,7 +149,7 @@ const Post = ({ post }: PostProps) => {
               <Link href="/public-profile/post">{authorName}</Link>
             </h6>
             <span className="mdtxt status">@santhosh_007</span>
-            <h6>bangalore</h6>
+            {/* <h6>bangalore</h6> */}
           </div>
         </div>
         <div className="btn-group cus-dropdown">

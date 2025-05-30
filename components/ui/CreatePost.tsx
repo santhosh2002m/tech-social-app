@@ -1,13 +1,12 @@
 "use client";
+
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useRef, useEffect } from "react";
 import EmojiPicker, { EmojiClickData } from "emoji-picker-react";
 import CreatePoll from "./CreatePoll";
 
 import add_post_avatar from "/public/images/hell.jpg";
-import emoji_laughing from "/public/images/icon/emoji-laughing.png";
-import vgallery from "/public/images/icon/vgallery.png";
 
 const CreatePost: React.FC = () => {
   const [isPollMode, setIsPollMode] = useState<boolean>(false);
@@ -123,13 +122,9 @@ const CreatePost: React.FC = () => {
                 className="d-flex align-items-center gap-2"
                 onClick={triggerMediaInput}
               >
-                <Image
-                  src={vgallery}
-                  width={24}
-                  height={24}
-                  className="max-un"
-                  alt="photo/video icon"
-                />
+                <span className="material-symbols-outlined icon-orange lgtxt">
+                  photo
+                </span>
                 <span>Photo/Video</span>
                 <input
                   type="file"
@@ -144,13 +139,9 @@ const CreatePost: React.FC = () => {
                 className="d-flex align-items-center gap-2"
                 onClick={triggerDocumentInput}
               >
-                <Image
-                  src={emoji_laughing}
-                  width={24}
-                  height={24}
-                  className="max-un"
-                  alt="document icon"
-                />
+                <span className="material-symbols-outlined icon-orange lgtxt">
+                  description
+                </span>
                 <span>Choose Documents</span>
                 <input
                   type="file"

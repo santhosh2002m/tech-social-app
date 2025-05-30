@@ -1,12 +1,7 @@
-import Image from "next/image";
-import avatar_2 from "/public/images/avatar-2.png";
-import avatar_3 from "/public/images/avatar-3.png";
-import avatar_4 from "/public/images/avatar-4.png";
-
 interface PostReactionProps {
   reaction?: string;
-  toggleCommentSection: () => void; // Add toggle function prop
-  isCommentSectionOpen: boolean; // Add state to reflect if comment section is open
+  toggleCommentSection: () => void;
+  isCommentSectionOpen: boolean;
 }
 
 const PostReaction: React.FC<PostReactionProps> = ({
@@ -18,7 +13,7 @@ const PostReaction: React.FC<PostReactionProps> = ({
     <>
       <div className="like-comment-share py-5 d-center flex-wrap gap-3 gap-md-0 justify-content-between">
         <button className="d-center gap-1 gap-sm-2 mdtxt">
-          <i className="material-symbols-outlined mat-icon"> favorite </i>
+          <i className="material-symbols-outlined mat-icon"> thumb_up </i>
           Like
         </button>
         <button
@@ -27,16 +22,16 @@ const PostReaction: React.FC<PostReactionProps> = ({
           }`}
           onClick={toggleCommentSection}
         >
-          <i className="material-symbols-outlined mat-icon"> chat </i>
+          <i className="material-symbols-outlined mat-icon"> chat_bubble </i>
           Comment
-        </button>
-        <button className="d-center gap-1 gap-sm-2 mdtxt">
-          <i className="material-symbols-outlined mat-icon"> share </i>
-          Share
         </button>
         <button className="d-center gap-1 gap-sm-2 mdtxt">
           <i className="material-symbols-outlined mat-icon"> search </i>
           AI Search
+        </button>
+        <button className="d-center gap-1 gap-sm-2 mdtxt">
+          <i className="material-symbols-outlined mat-icon"> arrow_upward </i>
+          Share
         </button>
         <button className="d-center gap-1 gap-sm-2 mdtxt">
           <i className="material-symbols-outlined mat-icon"> visibility </i>
