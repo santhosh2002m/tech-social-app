@@ -3,8 +3,9 @@
 import { useState } from "react";
 import SignIn from "../../components/signIn/signIn";
 import SignUp from "../../components/signup/signup";
-
+import logo from "/public/images/logo.png";
 import "../../styles/custom.scss";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
@@ -30,8 +31,14 @@ export default function LoginPage() {
             }`}
           >
             <div className={`panel left ${isRightPanelActive ? "active" : ""}`}>
-              <h1 className="black">Welcome Back!</h1>
-              <p className="black">
+              <Image
+                src={logo}
+                alt="TechSocial Logo"
+                width={300} // Increased width to span the panel
+                height={80} // Adjusted height to keep proportions
+              />
+              <h1 className="text-black">Welcome Back!</h1>
+              <p className="text-black">
                 To keep connected with us please login with your personal info
               </p>
               <button
@@ -42,8 +49,14 @@ export default function LoginPage() {
               </button>
             </div>
             <div className={`panel right ${isRightPanelActive ? "" : ""}`}>
-              <h1 className="black">Hello, Friend!</h1>
-              <p className="black">
+              <Image
+                src={logo}
+                alt="TechSocial Logo"
+                width={300} // Increased width to span the panel
+                height={80} // Adjusted height to keep proportions
+              />
+              <h1 className="text-black">Hello, Friend!</h1>
+              <p className="text-black">
                 Enter your personal details and start journey with us
               </p>
               <button
