@@ -10,17 +10,16 @@ const ContactForm = () => {
   });
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = () => {
-    // Handle form submission logic here (e.g., log data or send to an API)
     console.log("Form submitted:", formData);
-    // Show popup
     setShowPopup(true);
-    // Reset form
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
 

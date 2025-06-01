@@ -342,8 +342,8 @@
 }
 
 .model-option {
-  background-color: #2a2a2a; // Dark background for options
-  border: 2px solid #ff6200; // Orange border
+  background-color: #2a2a2a;
+  border: 2px solid #ff6200;
   color: #fff;
   padding: 20px;
   font-size: 1.2rem;
@@ -354,7 +354,7 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
 
   &:hover {
-    background-color: #3a3a3a; // Slightly lighter on hover
+    background-color: #3a3a3a;
   }
 
   &:active {
@@ -362,10 +362,10 @@
   }
 
   &.deepseek {
-    background-color: #ff6200; // Solid orange background for deepseek-rl
-    border: none; // Remove border for highlighted option
+    background-color: #ff6200;
+    border: none;
     &:hover {
-      background-color: #e05500; // Slightly darker orange on hover
+      background-color: #e05500;
     }
   }
 }
@@ -667,7 +667,6 @@
   }
 }
 
-/* Ensure the form fits well within the middle column on desktop */
 @media (min-width: 992px) {
   .contact-form {
     max-width: 600px;
@@ -717,7 +716,7 @@
 
 .popup-checkmark {
   font-size: 40px;
-  color: #28a745;
+  color: #ff6200; /* Changed from green to orange */
   margin-bottom: 10px;
 }
 
@@ -750,8 +749,8 @@
 
 .subscription {
   padding: 40px;
-  background-color: black; /* Matches home background color */
-  border: 1px solid #333333; /* Border to match home page sections */
+  background-color: black;
+  border: 1px solid #333333;
   color: #fff;
   border-radius: 12px;
   max-width: 1200px;
@@ -891,7 +890,7 @@
     margin-bottom: 16px;
 
     .savings-percentage {
-      background-color: #ff6200; /* Changed to orange */
+      background-color: #ff6200;
       padding: 2px 8px;
       border-radius: 10px;
       font-size: 12px;
