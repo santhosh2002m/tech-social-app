@@ -1,3 +1,4 @@
+// Base styles
 .Ts_searchBar {
   display: flex !important;
   justify-content: space-between !important;
@@ -7,4 +8,607 @@
 
 .Ts_searchBar_input {
   padding: 0px 10px !important;
+}
+
+.col-xxl-6 {
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+  @media (min-width: 992px) {
+    &.col-lg-8 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    &.col-xl-5 {
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    &.col-xxl-6 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+@media (min-width: 992px) {
+  .mt-lg-10 {
+    margin-top: 5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mt-xl-0 {
+    margin-top: 0;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.gap-7 {
+  gap: 1.75rem;
+}
+
+.cus-z {
+  position: relative;
+  z-index: 1;
+}
+
+.cus-z2 {
+  position: relative;
+  z-index: 5;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-orange {
+  background-color: #ff6200;
+  padding: 10px;
+}
+
+.h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.ai-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  border: 2px solid #ff6200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  background-size: cover;
+  background-position: center;
+
+  &.ad-ai {
+    background: linear-gradient(90deg, #00ff00, #ffff00);
+    position: relative;
+
+    &::before {
+      content: "Ad.AI";
+      position: absolute;
+      font-size: 4rem;
+      font-weight: 900;
+      color: #000;
+    }
+
+    .imagine-ads {
+      position: absolute;
+      bottom: 10px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 10px;
+      text-transform: lowercase;
+    }
+  }
+
+  &.work-ai {
+    background: #1e3a8a;
+    position: relative;
+
+    &::before {
+      content: "Work.AI";
+      position: absolute;
+      font-size: 4rem;
+      font-weight: 900;
+      color: #ff4040;
+    }
+
+    .ribbon {
+      position: absolute;
+      bottom: 20px;
+      background: #ff4040;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 5px 20px;
+      text-transform: uppercase;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      &::before {
+        left: -15px;
+        border-width: 18px 15px 18px 0;
+        border-color: transparent #ff4040 transparent transparent;
+      }
+
+      &::after {
+        right: -15px;
+        border-width: 18px 0 18px 15px;
+        border-color: transparent transparent transparent #ff4040;
+      }
+    }
+  }
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.Ts_explore_ai_p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+// Chat UI Styles
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 92%;
+  background-color: #1c2526;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  background-color: #ff6200;
+  padding: 12px 15px;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  &:hover,
+  &:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.chat-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.chat-content {
+  flex: 1;
+  background-color: #1c2526;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.chat-placeholder {
+  color: #6b7280;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.chat-input-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #2a3435;
+  border-top: 1px solid #444;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.chat-icon-button {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  margin: 0 8px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s ease;
+  &:hover,
+  &:active {
+    color: #ff6200;
+  }
+}
+
+.chat-input-field {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #4a5a5b;
+  border-radius: 8px;
+  background-color: #3a4445;
+  color: #fff;
+  margin: 0 10px;
+  transition: border-color 0.2s ease;
+  &:focus {
+    outline: none;
+    border-color: #ff6200;
+  }
+  &::placeholder {
+    color: #aaa;
+    font-weight: 300;
+  }
+}
+
+.chat-send-button {
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  &:hover,
+  &:active {
+    background-color: #e05500;
+  }
+}
+
+// Followers section styling for mobile
+.followers-wrapper {
+  padding: 15px;
+}
+
+// Work.AI Options Styles
+.work-ai-options {
+  display: flex;
+  flex-direction: column;
+  background-color: #1c2526;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.work-ai-options-list {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+.model-option {
+  background-color: #2a2a2a; // Dark background for options
+  border: 2px solid #ff6200; // Orange border
+  color: #fff;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: #3a3a3a; // Slightly lighter on hover
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.deepseek {
+    background-color: #ff6200; // Solid orange background for deepseek-rl
+    border: none; // Remove border for highlighted option
+    &:hover {
+      background-color: #e05500; // Slightly darker orange on hover
+    }
+  }
+}
+
+// Responsive Area
+@media (max-width: 575px) {
+  .bg-orange {
+    padding: 8px;
+  }
+
+  .h3 {
+    font-size: 1.2rem;
+  }
+
+  .ai-section {
+    padding: 10px;
+  }
+
+  .banner {
+    height: 150px;
+  }
+
+  .banner.ad-ai::before,
+  .banner.work-ai::before {
+    font-size: 2.5rem;
+  }
+
+  .imagine-ads {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+  }
+
+  .ribbon {
+    font-size: 1rem;
+    padding: 3px 15px;
+
+    &::before {
+      left: -10px;
+      border-width: 14px 10px 14px 0;
+    }
+
+    &::after {
+      right: -10px;
+      border-width: 14px 0 14px 10px;
+    }
+  }
+
+  .mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .Ts_explore_ai_p {
+    font-size: 0.9rem;
+  }
+
+  .chat-container,
+  .work-ai-options {
+    height: 75vh;
+    border-radius: 0;
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .chat-header {
+    padding: 10px 12px;
+  }
+
+  .back-button {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+
+  .chat-title {
+    font-size: 1.4rem;
+  }
+
+  .chat-content {
+    padding: 15px;
+  }
+
+  .chat-placeholder {
+    font-size: 0.9rem;
+  }
+
+  .chat-input-container {
+    padding: 10px;
+  }
+
+  .chat-icon-button {
+    font-size: 1.3rem;
+    margin: 0 8px;
+  }
+
+  .chat-input-field {
+    padding: 10px;
+    font-size: 0.95rem;
+    margin: 0 8px;
+  }
+
+  .chat-send-button {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+  }
+
+  .model-option {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .col-xxl-3.col-xl-3.col-lg-4.col-6.cus-z2 {
+    display: block;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 15px;
+    position: relative;
+    z-index: 5;
+    height: auto;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .col-xxl-6.col-xl-5.col-lg-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .col-xxl-3.col-xl-4.col-lg-4.followers-wrapper {
+    display: block;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .main-content {
+    position: relative;
+
+    .profile-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      z-index: 4;
+      opacity: 0;
+      min-width: 290px;
+      background-color: #2a3435;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      &.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      &.max-width {
+        max-width: 300px;
+      }
+
+      padding-top: 60px;
+      height: 100vh;
+      overflow-y: auto;
+
+      &.active::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          padding: 10px 15px;
+          color: #fff;
+          font-size: 1rem;
+          border-bottom: 1px solid #444;
+          &:hover {
+            background-color: #3a4445;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .my-list-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      z-index: 4;
+      opacity: 0;
+      min-width: 290px;
+      background-color: #2a3435;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      &.active {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      &.max-width {
+        max-width: 300px;
+      }
+
+      padding-top: 60px;
+      height: 100vh;
+      overflow-y: auto;
+
+      &.active::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          padding: 10px 15px;
+          color: #fff;
+          font-size: 1rem;
+          border-bottom: 1px solid #444;
+          &:hover {
+            background-color: #3a4445;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 }
