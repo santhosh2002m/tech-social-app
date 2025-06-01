@@ -1,5 +1,6 @@
 import RightSide from "@/components/home/RightSide";
 import HomeLeft from "@/components/menu/HomeLeft";
+import ContactForm from "../../components/ContactForm/ContactForm"; // Adjust the path as needed
 
 export default function page() {
   return (
@@ -11,7 +12,7 @@ export default function page() {
             <HomeLeft clss="d-lg-none" />
           </div>
           <div className="col-xxl-6 col-xl-5 col-lg-8 mt-0 mt-lg-10 mt-xl-0 d-flex flex-column gap-7 cus-z">
-            hello
+            <ContactForm />
           </div>
           <div className="col-xxl-3 col-xl-4 col-lg-4 col-6 mt-5 mt-xl-0">
             {/* Home Right */}
