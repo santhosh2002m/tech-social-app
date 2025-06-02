@@ -1,3 +1,4 @@
+// components/ui/Post.tsx
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import PostAction from "./PostAction";
@@ -11,12 +12,10 @@ const Post = ({ post }: PostProps) => {
   const { postText, authorAvt, authorName, hashTags, media, mediaType, poll } =
     post;
 
-  // Render media based on mediaType
   const renderMedia = () => {
     if (!mediaType || mediaType === "text") return null;
 
     if (mediaType === "poll" && poll) {
-      // Calculate total votes
       const totalVotes = poll.reduce(
         (sum: number, option: PollOption) => sum + option.votes,
         0
@@ -26,7 +25,6 @@ const Post = ({ post }: PostProps) => {
         <div className="poll-area my-3">
           <p className="poll-label">Poll</p>
           {poll.map((option: PollOption) => {
-            // Calculate percentage (handle division by zero)
             const percentage =
               totalVotes > 0 ? (option.votes / totalVotes) * 100 : 0;
 
@@ -149,7 +147,6 @@ const Post = ({ post }: PostProps) => {
               <Link href="/public-profile/post">{authorName}</Link>
             </h6>
             <span className="mdtxt status">@santhosh_007</span>
-            {/* <h6>bangalore</h6> */}
           </div>
         </div>
         <div className="btn-group cus-dropdown">

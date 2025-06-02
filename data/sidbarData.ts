@@ -22,17 +22,18 @@ export const friendLeftMenu = [
   ["lock", "Block List", "/block-list"],
 ];
 
+// data/sidbarData.ts
 export const homeLeftMenu = [
-  ["home", "Home", "/"], // Home screen
-  ["chat", "Chats", "/chats"], // Direct messaging
-  ["cognition", "Explore AI", "/explore-ai"], // Clearly symbolizes AI/brainpower
-  ["newspaper", "Posts", "/posts"], // Content or news feed
-  ["thumb_up_alt", "Liked Posts", "/liked-posts"], // Minimal and modern like button
-  ["reply", "Shared ", "/shared-posts"], // Clear indication of sharing action
-  ["mode_comment", "Commented ", "/commented-posts"], // Clean and simple for comments
-  ["alternate_email", "Mentioned ", "/mentioned-posts"], // '@' for mentions
-  ["turned_in", "Saved ", "/saved-posts"], // Saved/bookmarked
-  ["quiz", "FAQ", "/faq"], // Clearly Q&A focused
-  ["support_agent", "Support", "/support"], // Human support interaction
-  ["subscriptions", "Subscriptions", "/subscription"], // New: Subscription
+  ["home", "Home", "/"],
+  ["chat", "Chats", "/chats"],
+  ["cognition", "Explore AI", "/explore-ai"],
+  ["newspaper", "Posts", "/posts"],
+  ["thumb_up_alt", "Liked", "/liked"],
+  ["reply", "Shared ", "/shared"],
+  ["mode_comment", "Commented ", "/commented"],
+  ["alternate_email", "Mentioned ", "/mentioned"],
+  ["turned_in", "Saved ", "/saved"],
+  ["quiz", "FAQ", "/faq"],
+  ["support_agent", "Support", "/support"],
+  ["subscriptions", "Subscriptions", "/subscription"],
 ];

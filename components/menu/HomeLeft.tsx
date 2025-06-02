@@ -1,3 +1,4 @@
+// components/menu/HomeLeft.tsx
 "use client";
 
 import { homeLeftMenu } from "@/data/sidbarData";
@@ -5,10 +6,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import Shortcuts from "../common/Shortcuts";
 import avatar_1 from "/public/images/hell.jpg";
 
-const HomeLeft = ({ clss }: { clss?: string }) => {
+interface HomeLeftProps {
+  clss?: string;
+}
+
+const HomeLeft: React.FC<HomeLeftProps> = ({ clss }) => {
   const [activeProfile, setActiveProfile] = useState<boolean>(false);
   const pathname = usePathname();
 
@@ -52,7 +56,6 @@ const HomeLeft = ({ clss }: { clss?: string }) => {
           </div>
         </div>
         <ul className="profile-link mt-7 mb-7 pb-7">
-          {/* home Left Menu */}
           {homeLeftMenu.map(([icon, item, url], i) => (
             <li key={i}>
               <Link

@@ -1,3 +1,4 @@
+// data/postData.ts
 import avatar_1 from "/public/images/hell.jpg";
 import avatar_3 from "/public/images/hell.jpg";
 import avatar_4 from "/public/images/hell.jpg";
@@ -16,7 +17,7 @@ export interface PostData {
   id: number;
   postText: string;
   hashTags: string[];
-  media?: string[]; // Array of URLs for media (images, videos, PDFs, GIFs)
+  media?: string[];
   mediaType?: "image" | "video" | "pdf" | "gif" | "text" | "poll";
   poll?: PollOption[];
   authorName: string;
@@ -33,6 +34,11 @@ export interface PostData {
       authorAvt: StaticImageData;
     }>;
   }>;
+  isLiked?: boolean;
+  isShared?: boolean;
+  isCommented?: boolean;
+  isMentioned?: boolean;
+  isSaved?: boolean;
 }
 
 const postData: PostData[] = [
@@ -40,27 +46,37 @@ const postData: PostData[] = [
     id: 1,
     postText: `I created Roughly plugin to sketch crafted hand-drawn elements`,
     hashTags: [],
-    media: [post_img_1.src], // Use .src for Next.js image
+    media: [post_img_1.src],
     mediaType: "image",
     authorName: "Lori Cortez",
     authorAvt: avatar_1,
     comments: [],
+    isLiked: true,
+    isShared: false,
+    isCommented: false,
+    isMentioned: false,
+    isSaved: true,
   },
   {
     id: 2,
     postText: `Check out this demo video of the Roughly plugin!`,
     hashTags: ["plugin", "demo"],
-    media: ["/images/video.mp4"], // Static URL from /public
+    media: ["/images/video.mp4"],
     mediaType: "video",
     authorName: "Lori Cortez",
     authorAvt: avatar_1,
     comments: [],
+    isLiked: false,
+    isShared: true,
+    isCommented: false,
+    isMentioned: false,
+    isSaved: false,
   },
   {
     id: 3,
     postText: `Documentation for Roughly plugin`,
     hashTags: [],
-    media: ["/images/pdf.pdf"], // Static URL from /public
+    media: ["/images/pdf.pdf"],
     mediaType: "pdf",
     authorName: "Loprayos",
     authorAvt: avatar_5,
@@ -87,16 +103,26 @@ const postData: PostData[] = [
         ],
       },
     ],
+    isLiked: true,
+    isShared: true,
+    isCommented: true,
+    isMentioned: false,
+    isSaved: false,
   },
   {
     id: 4,
     postText: `A fun GIF to celebrate the plugin release!`,
     hashTags: ["gif", "celebration"],
-    media: ["/images/gif..gif"], // Static URL from /public
+    media: ["/images/gif..gif"],
     mediaType: "gif",
     authorName: "Lori Cortez",
     authorAvt: avatar_1,
     comments: [],
+    isLiked: false,
+    isShared: true,
+    isCommented: false,
+    isMentioned: true,
+    isSaved: false,
   },
   {
     id: 5,
@@ -111,6 +137,11 @@ const postData: PostData[] = [
     authorName: "Lori Cortez",
     authorAvt: avatar_1,
     comments: [],
+    isLiked: true,
+    isShared: false,
+    isCommented: false,
+    isMentioned: false,
+    isSaved: true,
   },
   {
     id: 6,
@@ -122,6 +153,11 @@ However, ethical concerns and societal impacts must be carefully addressed.`,
     authorName: "Loprayos",
     authorAvt: avatar_5,
     comments: [],
+    isLiked: false,
+    isShared: false,
+    isCommented: false,
+    isMentioned: true,
+    isSaved: false,
   },
 ];
 
