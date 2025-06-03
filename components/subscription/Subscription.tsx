@@ -5,11 +5,14 @@ const Subscription: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<"annual" | "monthly">(
     "annual"
   );
-  const [selectedPlan, setSelectedPlan] = useState<string>("Premium");
+  const [selectedPlans, setSelectedPlans] = useState<string[]>([]);
+  const [selectedWorkAIFeatures, setSelectedWorkAIFeatures] = useState<
+    string[]
+  >([]);
 
   const plans = [
     {
-      name: "Basic",
+      name: "Ad ai",
       monthlyPrice: 143,
       annualPrice: 1716,
       annualSavings: 16,
@@ -23,7 +26,7 @@ const Subscription: React.FC = () => {
       ],
     },
     {
-      name: "Premium",
+      name: "Work Ai",
       monthlyPrice: 356,
       annualPrice: 4272,
       annualSavings: 16,
@@ -38,24 +41,40 @@ const Subscription: React.FC = () => {
         "Creator Subscriptions",
       ],
     },
-    {
-      name: "Premium+",
-      monthlyPrice: 2200,
-      annualPrice: 26400,
-      annualSavings: 14,
-      features: [
-        "Everything in Premium, and",
-        "Fully ad-free",
-        "Largest reply boost",
-        "Write Articles",
-        "Radar",
-        "Grok AI",
-        "Highest usage limits",
-        "Unlock DeepSearch & Think",
-        "Early access to new features",
-      ],
-    },
   ];
+
+  const togglePlanSelection = (planName: string) => {
+    if (selectedPlans.includes(planName)) {
+      setSelectedPlans(selectedPlans.filter((plan) => plan !== planName));
+      if (planName === "Work Ai") {
+        setSelectedWorkAIFeatures([]);
+      }
+    } else {
+      setSelectedPlans([...selectedPlans, planName]);
+    }
+  };
+
+  const toggleWorkAIFeature = (
+    feature: string,
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    event.stopPropagation(); // Prevent the card's onClick from firing
+    if (selectedWorkAIFeatures.includes(feature)) {
+      setSelectedWorkAIFeatures(
+        selectedWorkAIFeatures.filter((f) => f !== feature)
+      );
+    } else {
+      setSelectedWorkAIFeatures([...selectedWorkAIFeatures, feature]);
+    }
+  };
+
+  const handleFeaturesClick = (event: React.MouseEvent<HTMLUListElement>) => {
+    // Only stop propagation if the "Work Ai" card is already selected
+    if (selectedPlans.includes("Work Ai")) {
+      event.stopPropagation(); // Prevent clicks on the features list from triggering the card's onClick
+    }
+    // If "Work Ai" is not selected, allow the click to propagate to select the card
+  };
 
   return (
     <div className="subscription">
@@ -88,9 +107,9 @@ const Subscription: React.FC = () => {
           <div
             key={plan.name}
             className={`plan-card ${
-              selectedPlan === plan.name ? "selected" : ""
+              selectedPlans.includes(plan.name) ? "selected" : ""
             }`}
-            onClick={() => setSelectedPlan(plan.name)}
+            onClick={() => togglePlanSelection(plan.name)}
           >
             <h3>{plan.name}</h3>
             <div className="price">
@@ -115,12 +134,33 @@ const Subscription: React.FC = () => {
                 </span>
               </div>
             )}
-            <ul className="features">
-              {plan.features.map((feature, index) => (
-                <li key={index}>
-                  <span className="checkmark">✓</span> {feature}
-                </li>
-              ))}
+            <ul
+              className="features"
+              onClick={
+                plan.name === "Work Ai" ? handleFeaturesClick : undefined
+              }
+            >
+              {plan.name === "Work Ai"
+                ? plan.features.map((feature, index) => (
+                    <li key={index}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          checked={selectedWorkAIFeatures.includes(feature)}
+                          onChange={(event) =>
+                            toggleWorkAIFeature(feature, event)
+                          }
+                          disabled={!selectedPlans.includes("Work Ai")}
+                        />
+                        <span className="reset">{feature}</span>
+                      </label>
+                    </li>
+                  ))
+                : plan.features.map((feature, index) => (
+                    <li key={index}>
+                      <span className="checkmark">✓</span> {feature}
+                    </li>
+                  ))}
             </ul>
           </div>
         ))}

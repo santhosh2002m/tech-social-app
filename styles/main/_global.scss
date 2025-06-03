@@ -2118,8 +2118,8 @@ textarea::placeholder {
 }
 
 .setting-size-120 {
-  width: 120px !important;
-  height: 120px !important;
+  width: 159px !important;
+  height: 159px !important;
 }
 
 /* About and Info Section Styling */
@@ -2359,6 +2359,7 @@ textarea::placeholder {
 }
 
 .banner-area .stats-section .d-flex .profile-icon-content.lgtxt {
+  cursor: pointer;
   font-size: 18px;
   line-height: 26px;
   color: var(--heading-1st-color); /* White text by default */
@@ -2403,6 +2404,7 @@ textarea::placeholder {
 }
 
 .banner-area .bio-data-section .d-flex .info-content.lgtxt {
+  cursor: pointer;
   font-size: 18px;
   line-height: 26px;
   color: var(--heading-1st-color); /* White text by default */
@@ -2560,4 +2562,6 @@ textarea::placeholder {
   }
 }
 
-
+.margin-bottom {
+  margin-bottom: 10px !important;
+}

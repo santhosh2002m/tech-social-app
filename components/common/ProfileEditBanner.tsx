@@ -26,12 +26,6 @@ const bioData = [
     icon: "link",
     class: "link",
   },
-  {
-    id: 4,
-    type: "100 Followers",
-    icon: "group",
-    class: "",
-  },
 ];
 
 const statsData = [
@@ -84,7 +78,9 @@ const ProfileEditBanner: React.FC = () => {
               {/* Section 1: Username, Handle, About Text */}
               <div className="user-info-section">
                 <h4 className="m-0 xltxt">santhosh</h4>
-                <p className="m-0 text-orange-500 lgtxt">@santhosh_kumar</p>
+                <p className="m-0 text-orange-500 lgtxt margin-bottom">
+                  @santhosh_kumar
+                </p>
                 <p className="about-text mb-0 lgtxt">
                   Co-Founder & CEO DataCenter Hub | WhiteNoise Corporation Tech
                   Influencer

@@ -1,22 +1,18 @@
-import RightSide from "@/components/home/RightSide";
 import HomeLeft from "@/components/menu/HomeLeft";
-import ContactForm from "../../components/ContactForm/ContactForm"; // Adjust the path as needed
+// import Subscription from "../../components/subscription/Subscription"; // Adjust the path as needed
+import ContactForm from "@/components/ContactForm/ContactForm";
 
-export default function page() {
+export default function subscription() {
   return (
     <main className="main-content">
-      <div className="container sidebar-toggler">
+      <div className="container">
         <div className="row">
-          <div className="col-xxl-3 col-xl-3 col-lg-4 col-6 cus-z2">
+          <div className="col-xxl-3 col-xl-3 col-lg-4">
             {/* Home Left */}
             <HomeLeft clss="d-lg-none" />
           </div>
-          <div className="col-xxl-6 col-xl-5 col-lg-8 mt-0 mt-lg-10 mt-xl-0 d-flex flex-column gap-7 cus-z">
+          <div className=" col-xl-5 col-lg-8 mt-0 mt-lg-10 mt-xl-0 d-flex flex-column gap-7 cus-z">
             <ContactForm />
-          </div>
-          <div className="col-xxl-3 col-xl-4 col-lg-4 col-6 mt-5 mt-xl-0">
-            {/* Home Right */}
-            <RightSide />
           </div>
         </div>
       </div>

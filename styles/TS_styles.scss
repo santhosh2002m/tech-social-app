@@ -102,7 +102,7 @@
   width: 100%;
   height: 200px;
   position: relative;
-  border: 2px solid #ff6200;
+  // border: 2px solid #ff6200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@
       background: #ff4040;
       color: #fff;
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 7;
       padding: 5px 20px;
       text-transform: uppercase;
 
@@ -620,8 +620,8 @@
   padding: 30px;
   background-color: #1a1a1a;
   border-radius: 15px;
-  width: 100%;
-  max-width: 500px;
+  max-width: 100%;
+  min-width: 900px;
   margin: 0 auto;
 
   .form-input,
@@ -747,6 +747,7 @@
   }
 }
 
+// Consolidated Subscription Styles
 .subscription {
   padding: 40px;
   background-color: black;
@@ -758,194 +759,229 @@
   text-align: center;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
-}
 
-.subscription-header {
-  font-size: 36px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 12px;
-}
-
-.subscription-subheader {
-  font-size: 16px;
-  color: #8899a6;
-  margin-bottom: 24px;
-  line-height: 1.5;
-
-  a {
-    color: #ff6200;
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-.billing-toggle {
-  display: inline-flex;
-  background-color: #2a2a2a;
-  border-radius: 20px;
-  padding: 4px;
-  margin-bottom: 16px;
-
-  button {
-    padding: 8px 24px;
-    background-color: transparent;
-    border: none;
-    border-radius: 16px;
-    color: #8899a6;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    position: relative;
-    transition: background-color 0.3s ease, color 0.3s ease;
-
-    &.active {
-      background-color: #ff6200;
-      color: #fff;
-    }
-
-    &:hover:not(.active) {
-      background-color: #3a3a3a;
-      color: #fff;
-    }
-  }
-}
-
-.limited-offer {
-  font-size: 14px;
-  color: #8899a6;
-  margin-bottom: 24px;
-}
-
-.plans-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  justify-items: center;
-  align-items: stretch;
-}
-
-.plan-card {
-  background-color: #2a2a2a;
-  border-radius: 12px;
-  padding: 24px;
-  width: 100%;
-  max-width: 350px;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-
-  &.selected {
-    border: 2px solid #ff6200;
-    transform: scale(1.02);
-    &::before {
-      content: "✓";
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background-color: #ff6200;
-      color: #fff;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 700;
-    }
-  }
-
-  h3 {
-    font-size: 24px;
-    font-weight: 600;
+  .subscription-header {
+    font-size: 36px;
+    font-weight: 700;
     color: #fff;
     margin-bottom: 12px;
   }
 
-  .price {
-    font-size: 32px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 8px;
+  .subscription-subheader {
+    font-size: 16px;
+    color: #8899a6;
+    margin-bottom: 24px;
+    line-height: 1.5;
 
-    .billing-cycle {
-      font-size: 16px;
-      font-weight: 400;
-      color: #8899a6;
+    a {
+      color: #ff6200;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
-  .savings {
-    font-size: 14px;
-    color: #8899a6;
+  .billing-toggle {
+    display: inline-flex;
+    background-color: #2a2a2a;
+    border-radius: 20px;
+    padding: 4px;
     margin-bottom: 16px;
 
-    .savings-percentage {
-      background-color: #ff6200;
-      padding: 2px 8px;
-      border-radius: 10px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #fff;
+    button {
+      padding: 8px 24px;
+      background-color: transparent;
+      border: none;
+      border-radius: 16px;
+      color: #8899a6;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &.active {
+        background-color: #ff6200;
+        color: #fff;
+      }
+
+      &:hover:not(.active) {
+        background-color: #3a3a3a;
+        color: #fff;
+      }
     }
   }
 
-  .features {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .limited-offer {
+    font-size: 14px;
+    color: #8899a6;
+    margin-bottom: 24px;
+  }
 
-    li {
-      display: flex;
-      align-items: flex-start;
-      font-size: 14px;
-      color: #d1d9e0;
-      margin-bottom: 12px;
+  .plans-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    justify-items: center;
+    align-items: stretch;
+  }
 
-      .checkmark {
-        color: #ff6200;
-        margin-right: 8px;
+  .plan-card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    &.selected {
+      border: 2px solid #ff6200;
+      transform: scale(1.02);
+
+      &::before {
+        content: "✓";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background-color: #ff6200;
+        color: #fff;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 16px;
+        font-weight: 700;
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+
+      .billing-cycle {
+        font-size: 16px;
+        font-weight: 400;
+        color: #8899a6;
+      }
+    }
+
+    .savings {
+      font-size: 14px;
+      color: #8899a6;
+      margin-bottom: 16px;
+
+      .savings-percentage {
+        background-color: #ff6200;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+      }
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: flex;
+        align-items: center; /* Align items vertically centered for consistency */
+        font-size: 14px;
+        color: #d1d9e0;
+        margin-bottom: 12px;
+        line-height: 1.5; /* Ensure consistent line height */
+
+        .checkmark {
+          color: #ff6200;
+          margin-right: 8px;
+          font-size: 16px;
+          line-height: 1; /* Match checkbox height */
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 16px; /* Match checkbox width */
+          height: 16px; /* Match checkbox height */
+        }
+
+        label {
+          display: flex;
+          align-items: center; /* Align checkbox and text vertically */
+          font-size: 14px; /* Match font size with static list */
+          color: #d1d9e0; /* Match text color with static list */
+          cursor: pointer;
+          line-height: 1.5; /* Match line height */
+        }
+
+        input[type="checkbox"] {
+          margin-right: 8px; /* Match spacing with checkmark */
+          accent-color: #ff6200; /* Orange color for checked state */
+          width: 16px; /* Match size with checkmark */
+          height: 16px; /* Match size with checkmark */
+          cursor: pointer;
+          vertical-align: middle; /* Ensure proper alignment */
+
+          &:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+
+    .plans-container {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+
+    .plan-card {
+      max-width: 100%;
+    }
+
+    .subscription-header {
+      font-size: 28px;
+    }
+
+    .subscription-subheader {
+      font-size: 14px;
+    }
+
+    .billing-toggle {
+      button {
+        padding: 6px 16px;
+        font-size: 14px;
       }
     }
   }
 }
 
-@media (max-width: 768px) {
-  .subscription {
-    padding: 24px;
-  }
-
-  .plans-container {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .plan-card {
-    max-width: 100%;
-  }
-
-  .subscription-header {
-    font-size: 28px;
-  }
-
-  .subscription-subheader {
-    font-size: 14px;
-  }
-
-  .billing-toggle {
-    button {
-      padding: 6px 16px;
-      font-size: 14px;
-    }
-  }
+.reset {
+  font-size: 14px !important;
+  color: #d1d9e0 !important;
 }
