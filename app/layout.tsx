@@ -40,7 +40,7 @@ export default function RootLayout({
               name="description"
               content="Circlehub React Nextjs Template"
             />
-            <title>tech social </title>
+            <title>TechSocial</title>
           </>
         )}
       </head>

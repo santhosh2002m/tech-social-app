@@ -8,11 +8,11 @@ const ContactAction = ({ sectionType, actionList }: ContactActionProps) => {
   const defaultActionLists = {
     followers: [
       ["Remove Follower", "person_remove"],
-      ["Hide Contact", "hide_source"],
+      ["Message", "hide_source"],
     ],
     followings: [
       ["Unfollow", "person_remove"],
-      ["Hide Contact", "hide_source"],
+      ["Message", "hide_source"],
     ],
   };
 

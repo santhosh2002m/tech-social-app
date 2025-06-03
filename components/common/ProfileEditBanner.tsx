@@ -26,6 +26,32 @@ const bioData = [
     icon: "link",
     class: "link",
   },
+  {
+    id: 4,
+    type: "",
+    icon: "",
+    class: "",
+  },
+  {
+    id: 5,
+    type: "",
+    icon: "",
+    class: "",
+  },
+
+  {
+    id: 6,
+    type: "",
+    icon: "",
+    class: "",
+  },
+
+  {
+    id: 7,
+    type: "",
+    icon: "",
+    class: "",
+  },
 ];
 
 const statsData = [
@@ -87,25 +113,6 @@ const ProfileEditBanner: React.FC = () => {
                 </p>
               </div>
 
-              {/* Section 2: Stats */}
-              <div className="stats-section">
-                {statsData.map((stat) => (
-                  <div
-                    key={stat.id}
-                    className="d-flex align-items-center gap-2 mb-2"
-                  >
-                    <span className="mdtxt d-center">
-                      <i className="material-symbols-outlined lgtxt">
-                        {stat.icon}
-                      </i>
-                    </span>
-                    <span className="profile-icon-content lgtxt">
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
               {/* Section 3: Bio Data */}
               <div className="bio-data-section">
                 {bioData.map((itm) => (
@@ -120,6 +127,25 @@ const ProfileEditBanner: React.FC = () => {
                     </span>
                     <span className={`info-content lgtxt ${itm.class}`}>
                       {itm.type}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Section 2: Stats */}
+              <div className="stats-section">
+                {statsData.map((stat) => (
+                  <div
+                    key={stat.id}
+                    className="d-flex align-items-center gap-2 mb-2"
+                  >
+                    <span className="mdtxt d-center">
+                      <i className="material-symbols-outlined lgtxt">
+                        {stat.icon}
+                      </i>
+                    </span>
+                    <span className="profile-icon-content lgtxt">
+                      {stat.label}
                     </span>
                   </div>
                 ))}

@@ -51,7 +51,7 @@ const ChatOption = () => {
                   sectionType="followings"
                   actionList={[
                     ["Unfollow", "person_remove"],
-                    ["Hide Contact", "hide_source"],
+                    ["Message", "hide_source"],
                   ]}
                 />
               </div>

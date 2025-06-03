@@ -18,9 +18,9 @@ export default function ExploreAISection({
       {/* Ad.AI Section */}
       <div className="">
         <img
-          src="/images/ad-banner.png"
+          src="/images/ad-ad.jpg"
           alt="Ad.AI Banner"
-          className="banner ad-ai"
+          className="banner ad-ai border-area"
           onClick={onAdAIClick}
           style={{ cursor: "pointer" }}
         />
@@ -33,9 +33,9 @@ export default function ExploreAISection({
       {/* Work.AI Section */}
       <div className="">
         <img
-          src="/images/work-banner.png"
+          src="/images/work-work.jpg"
           alt="Work.AI Banner"
-          className="banner work-ai"
+          className="banner work-ai border-area"
           onClick={onWorkAIClick}
           style={{ cursor: "pointer" }}
         />

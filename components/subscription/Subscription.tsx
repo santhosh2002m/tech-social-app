@@ -5,52 +5,53 @@ const Subscription: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<"annual" | "monthly">(
     "annual"
   );
-  const [selectedPlans, setSelectedPlans] = useState<string[]>([]);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
   const [selectedWorkAIFeatures, setSelectedWorkAIFeatures] = useState<
     string[]
   >([]);
 
   const plans = [
     {
-      name: "Ad ai",
-      monthlyPrice: 143,
-      annualPrice: 1716,
-      annualSavings: 16,
+      name: `Ad.AI`,
+      monthlyPrice: 50.0,
+      annualPrice: 504.0, // Adjusted for 16% savings: 600 - (600 * 0.16) = 504
+      annualSavings: 16, // 16% savings
       features: [
-        "Small reply boost",
-        "Encrypted direct messages",
-        "Bookmark folders",
-        "Highlights tab",
-        "Edit post",
-        "Longer posts",
+        "Reply boost",
+        "Radar",
+        "Edit Post",
+        "Longer Post",
+        "Download Video",
+        "Background Video Playback",
       ],
     },
     {
-      name: "Work Ai",
-      monthlyPrice: 356,
-      annualPrice: 4272,
-      annualSavings: 16,
+      name: `Work.AI`,
+      monthlyPrice: 65.0,
+      annualPrice: 655.2, // Adjusted for 16% savings: 780 - (780 * 0.16) = 655.20
+      annualSavings: 16, // 16% savings
       features: [
-        "Everything in Basic, and",
-        "Half Ads in For You and Following",
-        "Larger reply boost",
-        "Get paid to post",
-        "Checkmark",
-        "Grok with increased limits",
-        "X Pro, Analytics, Media Studio",
-        "Creator Subscriptions",
+        "GPT-5",
+        "Cloude 3",
+        "Gemini 1.5",
+        "Mistral 7B",
+        "LLaMA 3",
+        "xAI Grok",
       ],
     },
   ];
 
   const togglePlanSelection = (planName: string) => {
-    if (selectedPlans.includes(planName)) {
-      setSelectedPlans(selectedPlans.filter((plan) => plan !== planName));
-      if (planName === "Work Ai") {
+    if (selectedPlan === planName) {
+      setSelectedPlan(null);
+      if (planName === "Work.AI") {
         setSelectedWorkAIFeatures([]);
       }
     } else {
-      setSelectedPlans([...selectedPlans, planName]);
+      setSelectedPlan(planName);
+      if (selectedPlan === "Work.AI") {
+        setSelectedWorkAIFeatures([]);
+      }
     }
   };
 
@@ -58,7 +59,7 @@ const Subscription: React.FC = () => {
     feature: string,
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    event.stopPropagation(); // Prevent the card's onClick from firing
+    event.stopPropagation();
     if (selectedWorkAIFeatures.includes(feature)) {
       setSelectedWorkAIFeatures(
         selectedWorkAIFeatures.filter((f) => f !== feature)
@@ -69,24 +70,15 @@ const Subscription: React.FC = () => {
   };
 
   const handleFeaturesClick = (event: React.MouseEvent<HTMLUListElement>) => {
-    // Only stop propagation if the "Work Ai" card is already selected
-    if (selectedPlans.includes("Work Ai")) {
-      event.stopPropagation(); // Prevent clicks on the features list from triggering the card's onClick
+    if (selectedPlan === "Work.AI") {
+      event.stopPropagation();
     }
-    // If "Work Ai" is not selected, allow the click to propagate to select the card
   };
 
   return (
     <div className="subscription">
-      <h1 className="subscription-header">Upgrade to Premium</h1>
-      <p className="subscription-subheader">
-        Enjoy an enhanced experience, exclusive creator tools, top-tier
-        verification and security.
-        <br />
-        <span>
-          (For organizations, <a href="#">sign up here</a>)
-        </span>
-      </p>
+      <h1 className="subscription-header">Subscription</h1>
+
       <div className="billing-toggle">
         <button
           className={billingCycle === "annual" ? "active" : ""}
@@ -101,46 +93,29 @@ const Subscription: React.FC = () => {
           Monthly
         </button>
       </div>
-      <p className="limited-offer">Limited time offer</p>
+
       <div className="plans-container">
         {plans.map((plan) => (
           <div
             key={plan.name}
             className={`plan-card ${
-              selectedPlans.includes(plan.name) ? "selected" : ""
+              selectedPlan === plan.name ? "selected" : ""
             }`}
             onClick={() => togglePlanSelection(plan.name)}
           >
             <h3>{plan.name}</h3>
-            <div className="price">
-              ₹
-              {billingCycle === "annual"
-                ? plan.annualPrice.toLocaleString()
-                : plan.monthlyPrice.toLocaleString()}{" "}
-              <span className="billing-cycle">
-                / {billingCycle === "annual" ? "year" : "month"}
-              </span>
-            </div>
-            {billingCycle === "annual" && (
-              <div className="savings">
-                ₹
-                {(billingCycle === "annual"
-                  ? plan.annualPrice
-                  : plan.monthlyPrice * 12
-                ).toLocaleString()}{" "}
-                billed annually{" "}
-                <span className="savings-percentage">
-                  SAVE {plan.annualSavings}%
-                </span>
-              </div>
+            {/* Add savings badge, visible only in annual billing cycle */}
+            {billingCycle === "annual" && plan.annualSavings > 0 && (
+              <span className="savings-badge">SAVE {plan.annualSavings}%</span>
             )}
+
             <ul
               className="features"
               onClick={
-                plan.name === "Work Ai" ? handleFeaturesClick : undefined
+                plan.name === "Work.AI" ? handleFeaturesClick : undefined
               }
             >
-              {plan.name === "Work Ai"
+              {plan.name === "Work.AI"
                 ? plan.features.map((feature, index) => (
                     <li key={index}>
                       <label>
@@ -150,7 +125,6 @@ const Subscription: React.FC = () => {
                           onChange={(event) =>
                             toggleWorkAIFeature(feature, event)
                           }
-                          disabled={!selectedPlans.includes("Work Ai")}
                         />
                         <span className="reset">{feature}</span>
                       </label>
@@ -162,6 +136,22 @@ const Subscription: React.FC = () => {
                     </li>
                   ))}
             </ul>
+            <button
+              className={`plan-button ${
+                selectedPlan === plan.name ? "visible" : "hidden"
+              }`}
+            >
+              {billingCycle === "monthly" ? "Monthly" : "Annual"} Pricing at $
+              {billingCycle === "monthly"
+                ? plan.monthlyPrice.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })
+                : plan.annualPrice.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+            </button>
           </div>
         ))}
       </div>

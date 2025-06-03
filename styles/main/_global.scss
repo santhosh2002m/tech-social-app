@@ -2332,21 +2332,21 @@ textarea::placeholder {
   position: relative;
 }
 
-.banner-area .stats-section::before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: var(--primary-color);
-}
+// .banner-area .stats-section::before {
+//   content: "";
+//   position: absolute;
+//   left: -1rem;
+//   top: 0;
+//   bottom: 0;
+//   width: 1px;
+//   background-color: var(--primary-color);
+// }
 
-@media (max-width: 768px) {
-  .banner-area .stats-section::before {
-    display: none;
-  }
-}
+// @media (max-width: 768px) {
+//   .banner-area .stats-section::before {
+//     display: none;
+//   }
+// }
 
 .banner-area .stats-section .d-flex {
   gap: 6px;
@@ -2377,21 +2377,21 @@ textarea::placeholder {
   position: relative;
 }
 
-.banner-area .bio-data-section::before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: var(--primary-color);
-}
+// .banner-area .bio-data-section::before {
+//   content: "";
+//   position: absolute;
+//   left: -1rem;
+//   top: 0;
+//   bottom: 0;
+//   width: 1px;
+//   background-color: var(--primary-color);
+// }
 
-@media (max-width: 768px) {
-  .banner-area .bio-data-section::before {
-    display: none;
-  }
-}
+// @media (max-width: 768px) {
+//   .banner-area .bio-data-section::before {
+//     display: none;
+//   }
+// }
 
 .banner-area .bio-data-section .d-flex {
   gap: 6px;
@@ -2564,4 +2564,14 @@ textarea::placeholder {
 
 .margin-bottom {
   margin-bottom: 10px !important;
+}
+
+.bio-data-section {
+  border: 1px solid #f05a28 !important;
+  padding: 1rem;
+}
+
+.stats-section {
+  border: 1px solid #f05a28 !important;
+  padding: 1rem;
 }

@@ -15,10 +15,12 @@ export default function ExploreAIPage() {
   );
 
   const workAIModels: string[] = [
-    "gemini-2.0-flash",
-    "llama3.3-70b",
-    "mixtral-8x22b-instruct",
-    "deepseek-rl",
+    "GPT-5",
+    "Cloude 3",
+    "Gemini 1.5",
+    "Mistral 7B",
+    "LLama 3",
+    "xAI Grok",
   ];
 
   const handleAdAIClick = () => {
