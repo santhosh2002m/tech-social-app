@@ -12,7 +12,7 @@ export default function ExploreAISection({
   return (
     <div className="explore-ai-container">
       <div className="text-center bg-orange">
-        <h1 className="h3">Discover AI Innovations</h1>
+        <h1 className="h3">Explore AI</h1>
       </div>
 
       <div className="ai-section">
