@@ -3,8 +3,20 @@ import { useState } from "react";
 import RightSide from "@/components/home/RightSide";
 import HomeLeft from "@/components/menu/HomeLeft";
 
+// Define the Contact type
+interface Contact {
+  name: string;
+  username: string;
+}
+
+// Define the Message type
+interface Message {
+  text: string;
+  sender: "user" | "contact";
+}
+
 export default function Chats() {
-  const contacts = [
+  const contacts: Contact[] = [
     { name: "HOLLIE HART", username: "@hartllie" },
     { name: "DESIREE MORAN", username: "@morandesi" },
     { name: "STACY MCKENZIE", username: "@stacyzie" },
@@ -15,12 +27,12 @@ export default function Chats() {
     { name: "DINA PROCTOR", username: "@dinapro" },
   ];
 
-  const [selectedContact, setSelectedContact] = useState(null);
-  const [messages, setMessages] = useState({});
-  const [newMessage, setNewMessage] = useState("");
-  const [showOptions, setShowOptions] = useState(null); // State to track which contact's options are visible
+  const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
+  const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
+  const [newMessage, setNewMessage] = useState<string>("");
+  const [showOptions, setShowOptions] = useState<string | null>(null);
 
-  const handleMessageClick = (contact) => {
+  const handleMessageClick = (contact: Contact) => {
     setSelectedContact(contact);
     if (!messages[contact.username]) {
       setMessages((prev) => ({
@@ -28,7 +40,7 @@ export default function Chats() {
         [contact.username]: [],
       }));
     }
-    setShowOptions(null); // Hide options when opening a chat
+    setShowOptions(null);
   };
 
   const handleSendMessage = () => {
@@ -48,13 +60,13 @@ export default function Chats() {
     setSelectedContact(null);
   };
 
-  const toggleOptions = (contact) => {
+  const toggleOptions = (contact: Contact) => {
     setShowOptions(showOptions === contact.username ? null : contact.username);
   };
 
-  const handleOptionClick = (option, contact) => {
+  const handleOptionClick = (option: string, contact: Contact) => {
     console.log(`${option} selected for ${contact.name}`);
-    setShowOptions(null); // Hide options after selection
+    setShowOptions(null);
   };
 
   return (
