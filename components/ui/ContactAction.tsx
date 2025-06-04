@@ -4,15 +4,15 @@ interface ContactActionProps {
 }
 
 const ContactAction = ({ sectionType, actionList }: ContactActionProps) => {
-  // Define default actions
+  // Define default actions with updated icons
   const defaultActionLists = {
     followers: [
-      ["Remove Follower", "person_remove"],
-      ["Message", "hide_source"],
+      ["Remove Follower", "block"], // Changed from person_off
+      ["Message", "mail"], // Changed from chat
     ],
     followings: [
-      ["Unfollow", "person_remove"],
-      ["Message", "hide_source"],
+      ["Unfollow", "block"], // Changed from person_off
+      ["Message", "mail"], // Changed from chat
     ],
   };
 
