@@ -2362,13 +2362,14 @@ textarea::placeholder {
   cursor: pointer;
   font-size: 18px;
   line-height: 26px;
-  color: var(--heading-1st-color); /* White text by default */
+  color: #f05a28;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
 /* Hover effect for stats section */
 .banner-area .stats-section .d-flex:hover .material-symbols-outlined,
 .banner-area .stats-section .d-flex:hover .profile-icon-content {
-  color: var(--primary-color); /* Orange on hover */
+  color: #c2411b; /* Changed to a darker, more contrasting orange */
 }
 
 /* Section 3: Bio Data */
@@ -2566,12 +2567,8 @@ textarea::placeholder {
   margin-bottom: 10px !important;
 }
 
-.bio-data-section {
-  border: 1px solid #f05a28 !important;
-  padding: 1rem;
-}
-
 .stats-section {
   border: 1px solid #f05a28 !important;
   padding: 1rem;
+  border-radius: 12px;
 }

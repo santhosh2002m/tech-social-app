@@ -1412,3 +1412,411 @@
   border-radius: 20px;
   text-transform: uppercase;
 }
+
+/* ExploreAISection.css */
+/* Styles for the Explore AI section, ensuring banners display with correct aspect ratios. */
+
+.explore-ai-container {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-orange {
+  background-color: #ff6200;
+  padding: 10px;
+}
+
+.h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.ai-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  isolation: isolate;
+}
+
+.banner {
+  width: 100%;
+  max-width: 1206px;
+  height: auto;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.banner.ad-ai {
+  aspect-ratio: 1.98 / 1;
+}
+
+.banner.work-ai {
+  aspect-ratio: 1.85 / 1;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.Ts_explore_ai_p {
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+.border-area {
+  border: 1px solid #e05500;
+}
+
+@supports not (aspect-ratio: 1.98 / 1) {
+  .banner.ad-ai {
+    width: 100%;
+    padding-bottom: 50.505%;
+    position: relative;
+  }
+  .banner.ad-ai img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@supports not (aspect-ratio: 1.85 / 1) {
+  .banner.work-ai {
+    width: 100%;
+    padding-bottom: 54.054%;
+    position: relative;
+  }
+  .banner.work-ai img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 575px) {
+  .bg-orange {
+    padding: 8px;
+  }
+
+  .h3 {
+    font-size: 1.2rem;
+  }
+
+  .ai-section {
+    padding: 10px;
+  }
+
+  .banner {
+    max-width: 100%;
+  }
+
+  .mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .Ts_explore_ai_p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .banner {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .banner {
+    max-width: 1206px;
+  }
+}
+
+.plan-card:hover {
+  border: 1px solid #e05500 !important;
+}
+
+.plan-card:active {
+  border: 1px solid #e05500 !important;
+}
+
+.selected {
+  border: 1px solid #e05500 !important;
+}
+
+/* Add these styles to your existing CSS */
+
+/* Chat list styling */
+.chat-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #3a4445; /* Placeholder for avatar */
+  border-radius: 50%;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+}
+
+.contact-username {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.message-button {
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.message-button:hover,
+.message-button:active {
+  background-color: #e05500;
+}
+
+/* Adjust chat-content for the list */
+.chat-content {
+  flex: 1;
+  background-color: #1c2526;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Ensure the input container stays at the bottom */
+.chat-input-container {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #2a3435;
+  border-top: 1px solid #444;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 575px) {
+  .chat-contact {
+    padding: 8px 0;
+  }
+
+  .contact-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-name {
+    font-size: 1rem;
+  }
+
+  .contact-username {
+    font-size: 0.85rem;
+  }
+
+  .message-button {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+
+  .chat-input-container {
+    padding: 10px;
+  }
+}
+
+/* Chat messages styling */
+.chat-messages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+}
+
+.message {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.user-message {
+  background-color: #ff6200;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+
+.contact-message {
+  background-color: #3a4445;
+  color: #fff;
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+
+.message p {
+  margin: 0;
+}
+
+/* Adjust chat-content for messages */
+.chat-content {
+  flex: 1;
+  background-color: #1c2526;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 575px) {
+  .chat-messages {
+    padding: 10px;
+  }
+
+  .message {
+    max-width: 80%;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Contact actions container */
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+/* Options button (three dots) */
+.options-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.options-button:hover,
+.options-button:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Options dropdown */
+.options-container {
+  position: relative;
+}
+
+.options-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.option-item {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.option-item:hover {
+  background-color: #e0e0e0;
+}
+
+.option-item:active {
+  background-color: #d0d0d0;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 575px) {
+  .options-button {
+    font-size: 1.3rem;
+    padding: 5px 8px;
+  }
+
+  .options-dropdown {
+    min-width: 100px;
+  }
+
+  .option-item {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
