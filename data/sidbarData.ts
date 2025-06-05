@@ -26,8 +26,8 @@ export const friendLeftMenu = [
 export const homeLeftMenu = [
   ["home", "Home", "/"],
   ["chat", "Chats", "/chats"],
-  ["cognition", "Explore AI", "/explore-ai"],
-  ["newspaper", "Posts", "/posts"],
+  ["add", "Post", "/posts"],
+  ["travel_explore", "Explore AI", "/explore-ai"], // Updated icon for Explore AI
   ["thumb_up_alt", "Liked", "/liked"],
   ["reply", "Shared ", "/shared"],
   ["mode_comment", "Commented ", "/commented"],

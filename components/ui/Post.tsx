@@ -133,7 +133,7 @@ const Post = ({ post }: PostProps) => {
     <div className="top-area pb-5">
       <div className="profile-area d-center justify-content-between">
         <div className="avatar-item d-flex gap-3 align-items-center">
-          <div className="avatar position-relative">
+          <div className="avatar position-relative before-element-target">
             <Image
               className="avatar-img max-un"
               src={authorAvt}
