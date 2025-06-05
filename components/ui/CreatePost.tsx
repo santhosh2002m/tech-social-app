@@ -56,6 +56,31 @@ const CreatePost: React.FC = () => {
     setShowEmojiPicker(false);
   };
 
+  const handlePostSubmit = (e: React.FormEvent): void => {
+    e.preventDefault();
+    if (
+      !postContent.trim() &&
+      selectedMedia.length === 0 &&
+      selectedDocuments.length === 0
+    ) {
+      alert("Please add some content to post!");
+      return;
+    }
+
+    const postData = {
+      content: postContent,
+      media: selectedMedia,
+      documents: selectedDocuments,
+      timestamp: new Date().toISOString(),
+    };
+
+    console.log("Submitted Post:", postData);
+
+    setPostContent("");
+    setSelectedMedia([]);
+    setSelectedDocuments([]);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -78,7 +103,7 @@ const CreatePost: React.FC = () => {
   }, [showEmojiPicker]);
 
   return (
-    <div className="share-post d-flex gap-3 gap-sm-5 p-3 p-sm-5">
+    <div className="share-post d-flex gap-2 gap-sm-3 p-2 p-sm-3">
       <div className="profile-box">
         <Link href="#">
           <Image
@@ -92,11 +117,11 @@ const CreatePost: React.FC = () => {
       </div>
       <div className="w-100 position-relative">
         {!isPollMode ? (
-          <form action="#" className="w-100 position-relative">
+          <form onSubmit={handlePostSubmit} className="w-100 position-relative">
             <textarea
               cols={10}
               rows={2}
-              placeholder="Write something to Lerio.."
+              placeholder="Write something to Lerio..."
               className="w-100"
               value={postContent}
               onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
@@ -117,7 +142,49 @@ const CreatePost: React.FC = () => {
                 </div>
               )}
             </div>
-            <ul className="d-flex justify-content-between flex-wrap mt-3 gap-3">
+            {selectedMedia.length > 0 && (
+              <div className="selected-media mt-2">
+                <h6>Selected Photos/Videos:</h6>
+                <ul>
+                  {selectedMedia.map((file, index) => (
+                    <li
+                      key={index}
+                      className="smtxt d-flex align-items-center gap-2"
+                    >
+                      <span>{file.name}</span>
+                      <button
+                        className="cmn-btn alt smtxt"
+                        onClick={() => removeMedia(index)}
+                      >
+                        Remove
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {selectedDocuments.length > 0 && (
+              <div className="selected-documents mt-2">
+                <h6>Selected Documents:</h6>
+                <ul>
+                  {selectedDocuments.map((file, index) => (
+                    <li
+                      key={index}
+                      className="smtxt d-flex align-items-center gap-2"
+                    >
+                      <span>{file.name}</span>
+                      <button
+                        className="cmn-btn alt smtxt"
+                        onClick={() => removeDocument(index)}
+                      >
+                        Remove
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <ul className="d-flex align-items-center mt-2 gap-2 action-list space-between">
               <li
                 className="d-flex align-items-center gap-2"
                 onClick={triggerMediaInput}
@@ -136,7 +203,7 @@ const CreatePost: React.FC = () => {
                 />
               </li>
               <li
-                className="d-flex align-items-center gap-2"
+                className="d-flex align-items-center gap-2 choose-documents"
                 onClick={triggerDocumentInput}
               >
                 <span className="material-symbols-outlined icon-orange lgtxt">
@@ -159,49 +226,13 @@ const CreatePost: React.FC = () => {
                 <span className="material-symbols-outlined">poll</span>
                 <span>Poll</span>
               </li>
+              <li className="d-flex align-items-center gap-2">
+                <button type="submit" className="cmn-btn custom-post-btn">
+                  <span className="material-symbols-outlined">send</span>
+                  <span>Post</span>
+                </button>
+              </li>
             </ul>
-            {selectedMedia.length > 0 && (
-              <div className="selected-media mt-3">
-                <h6>Selected Photos/Videos:</h6>
-                <ul>
-                  {selectedMedia.map((file, index) => (
-                    <li
-                      key={index}
-                      className="smtxt d-flex align-items-center gap-2"
-                    >
-                      <span>{file.name}</span>
-                      <button
-                        className="cmn-btn alt smtxt"
-                        onClick={() => removeMedia(index)}
-                      >
-                        Remove
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {selectedDocuments.length > 0 && (
-              <div className="selected-documents mt-3">
-                <h6>Selected Documents:</h6>
-                <ul>
-                  {selectedDocuments.map((file, index) => (
-                    <li
-                      key={index}
-                      className="smtxt d-flex align-items-center gap-2"
-                    >
-                      <span>{file.name}</span>
-                      <button
-                        className="cmn-btn alt smtxt"
-                        onClick={() => removeDocument(index)}
-                      >
-                        Remove
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </form>
         ) : (
           <CreatePoll

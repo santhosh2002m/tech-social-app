@@ -22,7 +22,7 @@ const bioData = [
   },
   {
     id: 3,
-    type: "www.test.com",
+    type: "https://grok.com/",
     icon: "link",
     class: "link",
   },

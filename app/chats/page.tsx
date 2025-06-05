@@ -86,7 +86,7 @@ export default function Chats() {
                 >
                   ←
                 </button>
-                <h2 className="chat-title">
+                <h2 className="chat-title chat-message-center">
                   {selectedContact ? selectedContact.name : "Chats"}
                 </h2>
               </div>
@@ -127,12 +127,6 @@ export default function Chats() {
                             Message
                           </button>
                           <div className="options-container">
-                            <button
-                              className="options-button"
-                              onClick={() => toggleOptions(contact)}
-                            >
-                              ⋮
-                            </button>
                             {showOptions === contact.username && (
                               <div className="options-dropdown">
                                 <button

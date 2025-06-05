@@ -2042,9 +2042,7 @@ textarea::placeholder {
 }
 
 .accordion-button-custom:not(.collapsed) {
-  background-color: var(
-    --border-color
-  ) !important; /* Slightly lighter gray when open */
+  background-color: black !important; /* Slightly lighter gray when open */
   color: var(--primary-color) !important; /* Orange text when open (#f05a28) */
   border-bottom: 1px solid var(--border-color) !important; /* Add a bottom border when open to separate from body */
   border-radius: 8px 8px 0 0 !important; /* Ensure top corners remain rounded */
@@ -2409,6 +2407,7 @@ textarea::placeholder {
   font-size: 18px;
   line-height: 26px;
   color: var(--heading-1st-color); /* White text by default */
+  overflow: hidden;
 }
 
 .banner-area .bio-data-section .info-content.link {
@@ -2571,4 +2570,229 @@ textarea::placeholder {
   border: 1px solid #f05a28 !important;
   padding: 1rem;
   border-radius: 12px;
+}
+
+/* Reset default icon colors to white */
+.like-comment-share button .material-symbols-outlined.mat-icon {
+  color: var(--icon-color); /* White (#ffffff) by default */
+  transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* AI Search SVG icon colors */
+.like-comment-share button .ai-search-icon-stroke {
+  stroke: var(--icon-color); /* White (#ffffff) by default */
+  transition: stroke 0.3s ease; /* Smooth transition for stroke color */
+}
+
+.like-comment-share button .ai-search-icon-text {
+  fill: var(--icon-color); /* White (#ffffff) by default */
+  transition: fill 0.3s ease; /* Smooth transition for fill color */
+}
+
+/* Ensure the SVG aligns with other icons */
+.like-comment-share button .ai-search-icon {
+  vertical-align: middle; /* Align SVG with text */
+}
+
+/* Hover effect for icons (only when the button is not disabled) */
+.like-comment-share
+  button:not(:disabled):hover
+  .material-symbols-outlined.mat-icon {
+  color: var(--primary-color); /* Orange (#f05a28) on hover */
+}
+
+.like-comment-share button:not(:disabled):hover .ai-search-icon-stroke {
+  stroke: var(--primary-color); /* Orange (#f05a28) on hover */
+}
+
+.like-comment-share button:not(:disabled):hover .ai-search-icon-text {
+  fill: var(--primary-color); /* Orange (#f05a28) on hover */
+}
+
+/* Ensure disabled buttons keep the white color for icons and no hover effect */
+.like-comment-share button:disabled .material-symbols-outlined.mat-icon {
+  color: var(--icon-color); /* White (#ffffff) even when disabled */
+}
+
+.like-comment-share button:disabled .ai-search-icon-stroke {
+  stroke: var(--icon-color); /* White (#ffffff) even when disabled */
+}
+
+.like-comment-share button:disabled .ai-search-icon-text {
+  fill: var(--icon-color); /* White (#ffffff) even when disabled */
+}
+
+/* Ensure the counts (e.g., 1.6K, 2.4K) are white and unaffected by hover */
+.like-comment-share button {
+  color: var(--heading-1st-color); /* White text for counts */
+}
+
+.like-comment-share button:hover {
+  color: var(--heading-1st-color); /* Keep counts white on hover */
+}
+
+/* Adjust spacing between SVG and text on larger screens */
+.like-comment-share button .d-none.d-sm-inline {
+  margin-left: 4px; /* Small margin between SVG and text */
+  color: var(--heading-1st-color); /* Ensure text like "AI Search" is white */
+}
+
+.like-comment-share button:hover .d-none.d-sm-inline {
+  color: var(--heading-1st-color); /* Keep "AI Search" text white on hover */
+}
+
+/* Adjust the btn-section positioning and layout */
+.banner-area .text-area .btn-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  padding: 8px;
+  pointer-events: auto;
+}
+
+/* On smaller screens, stack buttons vertically and remove absolute positioning */
+@media (max-width: 768px) {
+  .banner-area .text-area .btn-section {
+    position: static; /* Remove absolute positioning */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: flex-end; /* Align buttons to the right */
+    margin-top: 1rem; /* Add space above the buttons */
+    margin-bottom: 1.5rem; /* Add space below the buttons */
+    padding: 0; /* Reset padding */
+  }
+
+  /* Adjust the buttons to fit the new layout */
+  .banner-area .text-area .btn-section .cmn-btn,
+  .banner-area .text-area .btn-section .cus-dropdown .dropdown-toggle {
+    width: auto; /* Prevent buttons from stretching too wide */
+    min-width: 120px; /* Ensure buttons have a minimum width */
+    text-align: center; /* Center text in buttons */
+  }
+
+  /* Ensure the dropdown menu aligns properly */
+  .banner-area .btn-section .cus-dropdown .dropdown-menu {
+    right: 0;
+    top: 100%;
+  }
+}
+
+/* Ensure text-area has enough space for the buttons on smaller screens */
+@media (max-width: 768px) {
+  .banner-area .text-area {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    gap: 1rem; /* Add spacing between elements */
+  }
+
+  /* Adjust content-sections to fit the new layout */
+  .banner-area .content-sections {
+    margin-top: 0; /* Reset margin to avoid extra spacing */
+  }
+}
+
+/* On very small screens, further adjust spacing */
+@media (max-width: 575px) {
+  .banner-area .text-area .btn-section {
+    align-items: stretch; /* Allow buttons to take full width if needed */
+    gap: 0.5rem; /* Reduce gap between buttons */
+  }
+
+  .banner-area .text-area .btn-section .cmn-btn,
+  .banner-area .text-area .btn-section .cus-dropdown .dropdown-toggle {
+    min-width: 100%; /* Make buttons full-width on very small screens */
+  }
+}
+
+/* Style the action list to ensure all items are in a single line with adjusted gap */
+.share-post .action-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Increased gap to 2rem for better spacing between items */
+  flex-wrap: nowrap; /* Prevent wrapping to ensure single line */
+  margin-top: 1rem;
+}
+
+/* Style the list items to be consistent */
+.share-post .action-list li {
+  cursor: pointer;
+  display: flex; /* Ensure children (text and icon) are aligned properly */
+  align-items: center;
+  gap: 0.5rem; /* Consistent gap between icon and text */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Ensure the text inside <li> inherits the color properly */
+.share-post .action-list li span:not(.material-symbols-outlined) {
+  color: var(--heading-1st-color); /* White text by default */
+  font-size: 16px; /* Match font size */
+  transition: color 0.3s ease; /* Smooth transition for text color */
+}
+
+/* Style the icons within the list items */
+.share-post .action-list li .material-symbols-outlined {
+  color: var(--icon-color); /* White icon by default */
+  font-size: 20px; /* Consistent icon size */
+  transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+/* Style the Post button to match the other actions */
+.share-post .action-list .custom-post-btn {
+  background: transparent; /* Remove default background */
+  border: none; /* Remove default border */
+  padding: 0; /* Reset padding */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Match gap with other items */
+  font-size: 16px; /* Match font size with other items */
+  color: var(--heading-1st-color); /* White text to match others */
+  transition: color 0.3s ease; /* Consistent transition timing for text */
+}
+
+/* Style the Post button icon to match the other icons */
+.share-post .action-list .custom-post-btn .material-symbols-outlined {
+  color: var(--primary-color); /* Orange icon by default to match design */
+  font-size: 20px; /* Match icon size with other items */
+  transition: color 0.3s ease; /* Consistent transition timing for icon */
+}
+
+/* Hover effect for all action items (including their children) */
+.share-post .action-list li:hover,
+.share-post .action-list li:hover span:not(.material-symbols-outlined),
+.share-post .action-list .custom-post-btn:hover,
+.share-post
+  .action-list
+  .custom-post-btn:hover
+  span:not(.material-symbols-outlined) {
+  color: var(--primary-color) !important; /* Force orange text on hover */
+}
+
+/* Hover effect for icons */
+.share-post .action-list li:hover .material-symbols-outlined,
+.share-post .action-list .custom-post-btn:hover .material-symbols-outlined {
+  color: var(--highlight-2nd-color) !important; /* Force orange icon on hover */
+}
+
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 575px) {
+  .share-post .action-list {
+    flex-wrap: wrap; /* Allow wrapping on very small screens if necessary */
+    gap: 1.25rem; /* Reduce gap to 1.25rem on smaller screens for better fit */
+  }
+
+  .share-post .action-list li,
+  .share-post .action-list .custom-post-btn {
+    font-size: 14px; /* Slightly smaller font on mobile */
+  }
+
+  .share-post .action-list .custom-post-btn .material-symbols-outlined {
+    font-size: 18px; /* Slightly smaller icon on mobile */
+  }
+}
+
+.space-between li {
+  margin-right: 25px;
 }
