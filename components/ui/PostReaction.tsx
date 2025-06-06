@@ -87,8 +87,23 @@ const PostReaction: React.FC<PostReactionProps> = ({
           }`}
           disabled
         >
-          <i className="material-symbols-outlined mat-icon"> arrow_upward </i>
-          1.9K
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="share-icon"
+          >
+            <path
+              d="M12 4V16M12 4L8 8M12 4L16 8M8 12H4V20H20V12H16"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          2.8K
         </button>
         <button className="d-center gap-1 gap-sm-2 mdtxt" disabled>
           <i className="material-symbols-outlined mat-icon"> visibility </i>

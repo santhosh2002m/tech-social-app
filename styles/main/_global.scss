@@ -2800,12 +2800,25 @@ textarea::placeholder {
 .main-content .post-item .post-single-box .avatar::before {
   position: absolute !important;
   content: "" !important;
-  width: 15px !important;
-  height: 15px !important;
+  width: 10px !important;
+  height: 10px !important;
   background: #c2411b !important; // Green dot
   border-radius: 50% !important;
-  top: 36px !important; // Reset top
-  left: 36px !important; // Reset left
+  top: 46px !important; // Reset top
+  left: 22px !important; // Reset left
+  right: -4px !important;
+  bottom: -4px !important;
+}
+
+.main-content .profile-sidebar .profile-pic .avatar::before {
+  position: absolute !important;
+  content: "" !important;
+  width: 10px !important;
+  height: 10px !important;
+  background: #c2411b !important; // Green dot
+  border-radius: 50% !important;
+  top: 46px !important; // Reset top
+  left: 22px !important; // Reset left
   right: -4px !important;
   bottom: -4px !important;
 }
