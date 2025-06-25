@@ -1,16 +1,25 @@
-// components/ui/Post.tsx
-import Image, { StaticImageData } from "next/image";
+// components/ui/Post.tsx (for reference)
+import Image from "next/image";
 import Link from "next/link";
 import PostAction from "./PostAction";
-import { PostData, PollOption } from "../../data/postData";
+import { PostData, PollOption } from "../../data/postData"; // Importing from postData.ts
 
 interface PostProps {
   post: PostData;
 }
 
 const Post = ({ post }: PostProps) => {
-  const { postText, authorAvt, authorName, hashTags, media, mediaType, poll } =
-    post;
+  const {
+    description,
+    image,
+    hashtags,
+    mentionUsers,
+    mediaType,
+    poll,
+    postGallary,
+    authorName = "Unknown User",
+    authorAvt = "/default-avatar.png",
+  } = post;
 
   const renderMedia = () => {
     if (!mediaType || mediaType === "text") return null;
@@ -48,6 +57,13 @@ const Post = ({ post }: PostProps) => {
         </div>
       );
     }
+
+    const media =
+      postGallary && postGallary.length > 0
+        ? postGallary.map((item) => item.filename)
+        : image
+        ? [image]
+        : [];
 
     if (!media || media.length === 0) {
       return <p className="text-danger">Media not found</p>;
@@ -119,8 +135,7 @@ const Post = ({ post }: PostProps) => {
             style={{ border: "none" }}
           >
             Your browser does not support PDFs. Please download the PDF to view
-            it:
-            <a href={media[0]}>Download PDF</a>.
+            it: <a href={media[0]}>Download PDF</a>.
           </iframe>
         </div>
       );
@@ -154,11 +169,18 @@ const Post = ({ post }: PostProps) => {
         </div>
       </div>
       <div className="py-4">
-        <p className="description">{postText || ""}</p>
+        <p className="description">{description || ""}</p>
         <p className="hastag d-flex gap-2">
-          {hashTags?.map((itm) => (
+          {hashtags?.map((itm) => (
             <Link key={itm} href="#">
               #{itm}
+            </Link>
+          ))}
+        </p>
+        <p className="mentions d-flex gap-2">
+          {mentionUsers?.map((user) => (
+            <Link key={user} href="#">
+              @{user}
             </Link>
           ))}
         </p>

@@ -6,6 +6,8 @@ import SignUp from "../../components/signup/signup";
 import logo from "/public/images/logo.png";
 import "../../styles/custom.scss";
 import Image from "next/image";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginPage() {
   const [isRightPanelActive, setIsRightPanelActive] = useState(false);
@@ -31,12 +33,7 @@ export default function LoginPage() {
             }`}
           >
             <div className={`panel left ${isRightPanelActive ? "active" : ""}`}>
-              <Image
-                src={logo}
-                alt="TechSocial Logo"
-                width={300} // Increased width to span the panel
-                height={80} // Adjusted height to keep proportions
-              />
+              <Image src={logo} alt="TechSocial Logo" width={300} height={80} />
               <h1 className="text-black">Welcome Back!</h1>
               <p className="text-black">
                 To keep connected with us please login with your personal info
@@ -49,12 +46,7 @@ export default function LoginPage() {
               </button>
             </div>
             <div className={`panel right ${isRightPanelActive ? "" : ""}`}>
-              <Image
-                src={logo}
-                alt="TechSocial Logo"
-                width={300} // Increased width to span the panel
-                height={80} // Adjusted height to keep proportions
-              />
+              <Image src={logo} alt="TechSocial Logo" width={300} height={80} />
               <h1 className="text-black">Hello, Friend!</h1>
               <p className="text-black">
                 Enter your personal details and start journey with us
@@ -69,6 +61,18 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 }

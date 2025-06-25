@@ -42,10 +42,15 @@ const HomeLeft: React.FC<HomeLeftProps> = ({ clss }) => {
         </div>
         <div className="profile-pic d-flex gap-2 align-items-center">
           <div className="avatar position-relative">
-            <Image
+            {/* <Image
               className="avatar-img max-un setting-size"
               src={avatar_1}
               alt="avatar"
+            /> */}
+            <img
+              src="/images/hello.jpg"
+              alt="hello"
+              className="avatar-img max-un setting-size"
             />
           </div>
           <div className="text-area">

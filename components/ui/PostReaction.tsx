@@ -1,6 +1,8 @@
+// components/ui/PostReaction.tsx
 "use client";
 
-import postData from "@/data/postData";
+import { useAppSelector } from "../../store/hooks";
+import { Post as PostType } from "../../type/PostTypes";
 
 interface PostReactionProps {
   reaction?: string;
@@ -15,19 +17,21 @@ const PostReaction: React.FC<PostReactionProps> = ({
   isCommentSectionOpen,
   postId,
 }) => {
-  const post = postData.find((p) => p.id === postId);
+  const post = useAppSelector((state) =>
+    state.posts.posts.find((p) => p.id === postId)
+  ) as PostType | undefined;
 
   return (
     <>
       <div className="like-comment-share py-5 d-center flex-wrap gap-3 gap-md-0 justify-content-between">
         <button
           className={`d-center gap-1 gap-sm-2 mdtxt ${
-            post?.isLiked ? "active" : ""
+            post?.is_like ? "active" : ""
           }`}
           disabled
         >
           <i className="material-symbols-outlined mat-icon"> thumb_up </i>
-          1.6K
+          {post?.total_like || 0}
         </button>
         <button
           className={`d-center gap-1 gap-sm-2 mdtxt ${
@@ -36,7 +40,7 @@ const PostReaction: React.FC<PostReactionProps> = ({
           onClick={toggleCommentSection}
         >
           <i className="material-symbols-outlined mat-icon"> chat_bubble </i>
-          2.4K
+          {post?.total_comment || 0}
         </button>
         <button
           className="d-center gap-1 gap-sm-2 mdtxt"
@@ -79,11 +83,11 @@ const PostReaction: React.FC<PostReactionProps> = ({
               className="ai-search-icon-stroke"
             />
           </svg>
-          <span className="d-none d-sm-inline">45k</span>
+          <span className="d-none d-sm-inline">{post?.popular_point || 0}</span>
         </button>
         <button
           className={`d-center gap-1 gap-sm-2 mdtxt ${
-            post?.isShared ? "active" : ""
+            post?.is_share_post ? "active" : ""
           }`}
           disabled
         >
@@ -96,23 +100,27 @@ const PostReaction: React.FC<PostReactionProps> = ({
             className="share-icon"
           >
             <path
-              d="M12 4V16M12 4L8 8M12 4L16 8M8 12H4V20H20V12H16"
+              d="M12 4V16M12 4L8 8M12 4L16 8M8 12H4V12H20V12H16"
               stroke="currentColor"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
           </svg>
-          2.8K
+          {post?.total_share || 0}
         </button>
         <button className="d-center gap-1 gap-sm-2 mdtxt" disabled>
           <i className="material-symbols-outlined mat-icon"> visibility </i>
-          12.5K
+          {post?.total_view || 0}
         </button>
       </div>
       <div className="view-comments-date d-flex justify-content-between align-items-center mt-2">
-        <span className="mdtxt">View 1,654 Comments</span>
-        <span className="mdtxt">9 days ago</span>
+        <span className="mdtxt">View {post?.total_comment || 0} Comments</span>
+        <span className="mdtxt">
+          {post?.updated_at
+            ? new Date(post.updated_at * 1000).toLocaleDateString()
+            : "Unknown date"}
+        </span>
       </div>
     </>
   );
